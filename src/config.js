@@ -51,7 +51,7 @@ var beacon = {
 var application = {
     title: "BiER-IVA",
     version: "v0.0.1",
-    logo: "images/opencb-logo.png",
+    logo: "images/bier-text.png",
     menu: [
         {
             id: "samples",
