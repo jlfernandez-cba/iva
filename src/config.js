@@ -49,19 +49,19 @@ var beacon = {
 };
 
 var application = {
-    title: "IVA",
-    version: "v0.7.0",
+    title: "BiER-IVA",
+    version: "v0.0.1",
     logo: "images/opencb-logo.png",
     menu: [
         {
             id: "samples",
             title: "Samples",
-            visibility: "public"
+            visibility: "none"
         },
         {
             id: "browser",
             title: "Variant Browser",
-            visibility: "public",
+            visibility: "none",
             // Allows to provide default filters for the browser
             filters: [
                 {
@@ -83,7 +83,7 @@ var application = {
         {
             id: "prioritization",
             title: "Prioritization",
-            visibility: "public",
+            visibility: "none",
             // submenu: [
             //     {
             //         id: "family-prioritization",
@@ -114,12 +114,12 @@ var application = {
         {
             id: "beacon",
             title: "Beacon",
-            visibility: "public"
+            visibility: "none"
         },
         {
             id: "tools",
             title: "Tools",
-            visibility: "public",
+            visibility: "none",
             submenu: [
                 {
                     id: "ibs",
@@ -150,12 +150,12 @@ var application = {
         {
             id: "genomeBrowser",
             title: "Genome Browser",
-            visibility: "public",
+            visibility: "none",
         }
     ],
     search: {
         placeholder: "Search",
-        visibility: "public"
+        visibility: "none"
     },
     settings: {
         visibility: "public"
