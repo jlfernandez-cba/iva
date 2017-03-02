@@ -21,7 +21,8 @@ var cellbase = {
 
 var opencga = {
     // host: "bioinfodev.hpc.cam.ac.uk/opencga-1.0.0-rc3",
-    host: "bioinfodev.hpc.cam.ac.uk/hgva-1.0.0",
+    // host: "bioinfodev.hpc.cam.ac.uk/hgva-1.0.0",
+    host: "193.147.175.128:8080/opencga-1.0.0-final",
     version: "v1",
     // user:  Useful scenario is user@project:study
     projects: [
