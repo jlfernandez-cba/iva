@@ -23,6 +23,7 @@ var opencga = {
     // host: "bioinfodev.hpc.cam.ac.uk/opencga-1.0.0-rc3",
     // host: "bioinfodev.hpc.cam.ac.uk/hgva-1.0.0",
     host: "193.147.175.128:8080/opencga-1.0.0-final",
+
     version: "v1",
     // user:  Useful scenario is user@project:study
     projects: [
@@ -37,6 +38,7 @@ var opencga = {
         //     ]
         // }
     ],
+    summary: true,
     cookies: {
         userName: "iva_userId",
         sessionId: "iva_sid"
@@ -55,31 +57,10 @@ var application = {
     logo: "images/bier-text.png",
     menu: [
         {
-            id: "samples",
-            title: "Samples",
-            visibility: "none"
-        },
-        {
             id: "browser",
             title: "Variant Browser",
-            visibility: "none",
-            // Allows to provide default filters for the browser
-            filters: [
-                {
-                    name: "Example BRCA2",
-                    query: {
-                        gene: "BRCA2",
-                        conservation: "phylop<0.001"
-                    }
-                },
-                {
-                    name: "Example OR11",
-                    query: {
-                        gene: "OR11H1",
-                        conservation: "phylop<=0.001"
-                    }
-                }
-            ]
+            visibility: "public",
+
         },
         {
             id: "prioritization",
@@ -106,6 +87,7 @@ var application = {
             //         visibility: "public"
             //     }
             // ]
+
         },
         {
             id: "analysis",
