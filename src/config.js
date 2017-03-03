@@ -91,7 +91,7 @@ var application = {
         },
         {
             id: "analysis",
-            title: "Analysis",
+            title: "Variant Analysis",
             visibility: "public"
         },
         {
