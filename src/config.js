@@ -59,7 +59,7 @@ var application = {
         {
             id: "browser",
             title: "Variant Browser",
-            visibility: "public",
+            visibility: "none",
 
         },
         {
