@@ -15,14 +15,14 @@
  */
 
 var cellbase = {
-    hosts: ["bioinfodev.hpc.cam.ac.uk/cellbase-4.5.0-rc"],
+    hosts: ["bioinfodev.hpc.cam.ac.uk/cellbase-4.5.0-rc.1.1"],
     version: "v4"
 };
 
 var opencga = {
     // host: "bioinfodev.hpc.cam.ac.uk/opencga-1.0.0-rc3",
-    //host: "bioinfodev.hpc.cam.ac.uk/hgva-1.0.0-facet",
-    host: "193.147.175.128:8080/opencga-1.1.0-dev",
+    host: "bioinfodev.hpc.cam.ac.uk/hgva-1.1.0-dev",
+
     version: "v1",
     // asUser: "researchcga", // user@project:study
     projects: [
@@ -47,7 +47,6 @@ var application = {
     title: "BiER-IVA",
     version: "v0.0.1",
     logo: "images/bier-text.png",
-
     menu: [
         {
             id: "browser",
@@ -203,8 +202,14 @@ var tools = {
     gene: {
         protein: {
             color: {
-                missense_variant: "blue",
-                stop_gained: "red"
+                synonymous_variant: "blue",
+                coding_sequence_variant: "blue",
+                missense_variant: "orange",
+                protein_altering_variant: "orange",
+                start_lost: "red",
+                stop_gained: "red",
+                stop_lost: "red",
+                stop_retained_variant: "red"
             }
         }
     },
@@ -283,25 +288,7 @@ var tools = {
                 ],
 
         },
-        chromosomal_gender:
-            [
-                {
-                    id: "46_xx",
-                    title:"46,XX"
-                },
-                {
-                    id: "46_xy",
-                    title:"46,XY"
-                },
-                {
-                    id: "other",
-                    title:"Other"
-                },
-                {
-                    id: "ne",
-                    title:"NE"
-                },
-            ],
+        chromosomal_gender: [ "XX", "XY", "XO", "XXY", "XXX", "XXYY", "XXXY", "XXXX", "XYY", "OTHER", "UNKNOWN" ],
         ethnicity:
             [
                 {
