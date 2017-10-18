@@ -21,7 +21,9 @@ const cellbase = {
 };
 
 const opencga = {
-    host: "bioinfodev.hpc.cam.ac.uk/hgva-1.2.0-dev",
+    host: "iva-acci.clinbioinfosspa.es:8080/opencga-1.3.0-dev",
+    // host: "localhost:8080/opencga-1.3.0-dev",
+    // host: "bioinfodev.hpc.cam.ac.uk/hgva-1.2.0-dev",
     version: "v1",
     // asUser: "researchcga", // user@project:study
     projects: [
@@ -62,22 +64,22 @@ const application = {
         {
             id: "browser",
             title: "Variant Browser",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "clinical",
-            title: "Clinical",
+            title: "Start",
             visibility: "public",
         },
         {
             id: "prioritization",
             title: "Prioritization",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "analysis",
             title: "Analysis",
-            visibility: "public",
+            visibility: "none",
             submenu: [
 
                 {
@@ -104,17 +106,17 @@ const application = {
         {
             id: "facet",
             title: "Facets (New!)",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "beacon",
             title: "Beacon",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "tools",
             title: "Tools",
-            visibility: "public",
+            visibility: "none",
             submenu: [
                 {
                     id: "ibs",
@@ -150,15 +152,15 @@ const application = {
         {
             id: "genomeBrowser",
             title: "Genome Browser",
-            visibility: "public",
+            visibility: "none",
         },
     ],
     search: {
         placeholder: "Search",
-        visibility: "public",
+        visibility: "none",
     },
     settings: {
-        visibility: "public",
+        visibility: "none",
     },
     about: [
         {name: "Documentation", url: "http://docs.opencb.org/display/iva/IVA+Home", icon: "fa fa-book"},
@@ -223,6 +225,10 @@ const populationFrequencies = {
                     id: "EAS",
                     title: "East Asian [EAS]",
                 },
+                {
+                    id: "IBS",
+                    title: "Iberian [IBS]",
+                },
             ],
         },
         {
@@ -266,6 +272,17 @@ const populationFrequencies = {
                     id: "AA",
                     title: "African American [AA]",
                     active: true,
+                },
+            ],
+        },
+        {
+            id: "MGP",
+            title: "MGP",
+            tooltip: "Only considers variants whose observed allelic frequency in the Spanish Medical Genome Project (MGP) database is below (or above) the defined value. MGP covers only exomic positions. The frequencies were obtained using up to 267 exomes.",
+            populations: [
+                {
+                    id: "ALL",
+                    title: "MGP [ALL]",
                 },
             ],
         },
