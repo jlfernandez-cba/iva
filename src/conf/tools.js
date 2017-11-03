@@ -17,34 +17,109 @@
 /**
  * Created by imedina on 05/06/17.
  */
+const filter = {
+    missing: true,
+    searchButtonText: "Search",
+    study: {
+        title: "Study and Cohorts",
+        collapsed: false,
+        samples: {
+            visibility: "public",
+            selector: true,
+            segregation: ["Autosomal Dominant", "Autosomal Recessive", "Compound Heterocygotous", "Recessive X-linked"]
+        },
+        cohorts: {
+            visibility: "public",
+            cohortPerStudy: {
+                "1kG_phase3": [{id: "ALL", name: "All"}, {id: "MXL", name: "Mexican"}],
+                "EXAC": [{id: "ALL", name: "All"}]
+            }
+        },
+        scores: {
+            visibility: "none",
+            tooltip: ""
+        },
+        studies: {
+            visibility: "public"
+        },
+        clinicalData: {
+            visibility: "none"
+        }
+    },
+    genomic: {
+        chromosomalLocation:{
+            tooltip: "Filter out variants falling outside the genomic interval(s) defined"
+        },
+        featureIds:{
+            tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
+        },
+        geneDiseasePanels:{
+            tooltip: "Filter out variants falling outside the genomic intervals (typically genes) defined by the panel(s) chosen"
+        },
+        variantType:{
+            tooltip: "Only considers variants of the selected type"
+        }
+
+    },
+    populationFrequency:{
+        _1000Genomes:{
+
+        },
+        exAC:{
+
+        },
+        eSP6500:{
+
+        }
+    },
+    deleteriousness:{
+        proteinSubstitutionScore:{
+            tooltip:"SIFT score. Choose either a Tolerated/Deleterious qualitative score or provide below a quantitative impact value. SIFT scores <0.05 are considered deleterious. Polyphen: Choose, either a Benign/probably damaging qualitative score or provide below a quantitative impact value. Polyphen scores are considered Benign (<0.15), Possibly damaging (0.15-0.85) or Damaging (>0.85)"
+        },
+        cADD:{
+            tooltip:"Raw values have relative meaning, with higher values indicating that a variant is more likely to be simulated (or not observed) and therefore more likely to have deleterious effects. If discovering causal variants within an individual, or small groups, of exomes or genomes te use of the scaled CADD score is recommended."
+        }
+    },
+    conservation: {
+        showLogicalOperator: false,
+        tooltip: ""
+    }
+
+};
+
+let filterClinical = filter;
+filterClinical.study.title = "Study";
+filterClinical.study.samples.visibility = "public";
+filterClinical.study.cohorts.visibility = "none";
+filterClinical.study.scores.visibility = "none";
+filterClinical.study.studies.visibility = "none";
+filterClinical.study.clinicalData.visibility = "none";
 
 const tools = {
     browser: {
-        cohorts: {
-            // "1kG_phase3": [{id: "ALL", name: "All"}, {id: "MXL", name: "Mexican"}],
-            // "EXAC": [{id: "ALL", name: "All"}]
-        },
-        missing: true,
+        title: "Variant Browser",
+        active: false,
         filters: [
             {
                 name: "Example BRCA2",
                 query: {
                     gene: "BRCA2",
-                    conservation: "phylop<0.001",
+                    conservation: "phylop<0.001"
                 },
             },
             {
                 name: "Example OR11",
                 query: {
                     gene: "OR11H1",
-                    conservation: "phylop<=0.001",
+                    conservation: "phylop<=0.001"
                 },
             },
         ],
-        active: false,
+        filter: filter
     },
     prioritization: {
-        segregation: ["Autosomal Dominant", "Autosomal Recessive", "Compound Heterocygotous", "Recessive X-linked"],
+        title: "Prioritization",
+        active: false,
         filters: [
             {
                 name: "Example BRCA2",
@@ -61,11 +136,10 @@ const tools = {
                 },
             },
         ],
-        active: false,
-
+        filter: filter
     },
     interpretation: {
-      active: false
+        active: false
     },
     gene: {
         protein: {
@@ -140,6 +214,7 @@ const tools = {
             },
         ],
         active: false,
+        filter: filter
     },
     beacon: {
         hosts: [
@@ -313,6 +388,7 @@ const tools = {
             },
         ],
         active: false,
+        filter: filterClinical
     },
     genomeBrowser: {
         active: false,
