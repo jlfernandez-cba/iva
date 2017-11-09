@@ -47,37 +47,39 @@ const filter = {
         }
     },
     genomic: {
-        chromosomalLocation:{
+e:{
+        chromosomalLocation: {
             tooltip: "Filter out variants falling outside the genomic interval(s) defined"
         },
-        featureIds:{
+        featureIds: {
             tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
         },
-        geneDiseasePanels:{
+        geneDiseasePanels: {
             tooltip: "Filter out variants falling outside the genomic intervals (typically genes) defined by the panel(s) chosen"
         },
-        variantType:{
+        variantType: {
             tooltip: "Only considers variants of the selected type"
         }
 
     },
-    populationFrequency:{
-        _1000Genomes:{
+
+    populationFrequency: {
+        _1000Genomes: {
 
         },
-        exAC:{
+        exAC: {
 
         },
-        eSP6500:{
+        eSP6500: {
 
         }
     },
-    deleteriousness:{
-        proteinSubstitutionScore:{
-            tooltip:"SIFT score. Choose either a Tolerated/Deleterious qualitative score or provide below a quantitative impact value. SIFT scores <0.05 are considered deleterious. Polyphen: Choose, either a Benign/probably damaging qualitative score or provide below a quantitative impact value. Polyphen scores are considered Benign (<0.15), Possibly damaging (0.15-0.85) or Damaging (>0.85)"
+    deleteriousness: {
+        proteinSubstitutionScore: {
+            tooltip: "SIFT score. Choose either a Tolerated/Deleterious qualitative score or provide below a quantitative impact value. SIFT scores <0.05 are considered deleterious. Polyphen: Choose, either a Benign/probably damaging qualitative score or provide below a quantitative impact value. Polyphen scores are considered Benign (<0.15), Possibly damaging (0.15-0.85) or Damaging (>0.85)"
         },
-        cADD:{
-            tooltip:"Raw values have relative meaning, with higher values indicating that a variant is more likely to be simulated (or not observed) and therefore more likely to have deleterious effects. If discovering causal variants within an individual, or small groups, of exomes or genomes te use of the scaled CADD score is recommended."
+        CADD: {
+            tooltip: "Raw values have relative meaning, with higher values indicating that a variant is more likely to be simulated (or not observed) and therefore more likely to have deleterious effects. If discovering causal variants within an individual, or small groups, of exomes or genomes te use of the scaled CADD score is recommended."
         }
     },
     conservation: {
