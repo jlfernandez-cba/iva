@@ -50,7 +50,6 @@ const filter = {
         }
     },
     genomic: {
-e:{
         chromosomalLocation: {
             tooltip: "Filter out variants falling outside the genomic interval(s) defined"
         },
