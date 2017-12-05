@@ -22,7 +22,7 @@ const cellbase = {
 
 const opencga = {
     //host: "bioinfodev.hpc.cam.ac.uk/hgva-1.2.0-dev",
-    host: "iva-nagen.clinbioinfosspa.es:8080/opencga-1.3.0-dev",
+    host: "iva-nagen.clinbioinfosspa.es:8080/opencga-1.3.0-rc",
     version: "v1",
     // asUser: "researchcga", // user@project:study
     projects: [
@@ -57,8 +57,17 @@ const ebiWS = {
 
 const application = {
     title: "IVA-NAGEN",
-    version: "v0.9.0",
+    version: "v1.0.0",
     logo: "img/opencb-logo.png",
+    notifyEventMessage: "notifymessage",
+    session: {
+        // 60000 ms = 1 min
+        checkTime: 60000,
+        // 60000 ms = 1 min
+        minRemainingTime: 60000,
+        // 600000 ms = 10 min = 1000(1sec) * 60(60 sec = 1min) * 10(10 min)
+        maxRemainingTime: 600000
+    },
     menu: [
         {
             id: "browser",
