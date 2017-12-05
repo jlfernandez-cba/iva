@@ -56,8 +56,17 @@ const ebiWS = {
 
 const application = {
     title: "MMP-SAS",
-    version: "v0.9.0",
+    version: "v1.0.0",
     logo: "img/cbra_logo_initial.png",
+    notifyEventMessage: "notifymessage",
+    session: {
+        // 60000 ms = 1 min
+        checkTime: 60000,
+        // 60000 ms = 1 min
+        minRemainingTime: 60000,
+        // 600000 ms = 10 min = 1000(1sec) * 60(60 sec = 1min) * 10(10 min)
+        maxRemainingTime: 600000
+    },
     menu: [
         {
             id: "browser",
