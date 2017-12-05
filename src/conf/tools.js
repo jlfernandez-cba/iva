@@ -25,8 +25,8 @@ const filter = {
     },
     sections: [
         {
-            title: "Study and Cohorts",
-            collapsed: true,
+            title: "Study",
+            collapsed: false,
             subsections: [
                 {
                     id: "sample",
@@ -34,26 +34,6 @@ const filter = {
                     selector: true,
                     segregations: ["Autosomal Dominant", "Autosomal Recessive", "Compound Heterocygotous", "Recessive X-linked"],
                     tooltip: "Filter by sample genotypes"
-                },
-                {
-                    id: "cohort",
-                    title: "Cohort Stats (MAF)",
-                    cohorts: {  // organised in projects and studies
-                        reference_grch37: {
-                            "1kG_phase3": [
-                                {id: "ALL", name: "All"}, {id: "MXL", name: "Mexican"}
-                            ],
-                            EXAC: [
-                                {id: "ALL", name: "All"}
-                            ]
-                        }
-                    },
-                    tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
-                },
-                {
-                    id: "study",
-                    title: "Studies Filter",
-                    tooltip: "Only considers variants from the selected studies"
                 }
             ]
         },
@@ -85,7 +65,14 @@ const filter = {
                     id: "type",
                     title: "Variant Type",
                     tooltip: "Only considers variants of the selected type"
+                },
+                {
+                    id: "consequenceType",
+                    title: "Select SO terms",
+                    tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
                 }
+
+
             ]
         },
         {
@@ -147,56 +134,28 @@ const filter = {
             ]
         },
         {
-            title: "Consequence Type",
-            collapsed: true,
-            subsections: [
-                {
-                    id: "consequenceType",
-                    title: "Select SO terms",
-                    tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
-                }
-            ]
-        },
-        {
-            title: "Gene Ontology",
+            title: "Clinical",
             collapsed: true,
             subsections: [
                 {
                     id: "go",
                     title: "GO Accessions",
                     tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
-                }
-            ]
-        },
-        {
-            title: "Phenotype-Disease",
-            collapsed: true,
-            subsections: [
+                },
                 {
                     id: "hpo",
                     title: "HPO Accessions",
                     tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
-                },
-                {
-                    id: "clinvar",
-                    title: "ClinVar Accessions",
-                    tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
-                },
-                {
-                    id: "fullTextSearch",
-                    title: "Full-text search on HPO, ClinVar, protein domains or keywords. Some OMIM and Orphanet IDs are also supported",
-                    tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
                 }
             ]
         }
-
     ]
 };
 
 
 const variantView = {
     gridView : {
-        nucleotideGenotype: false
+        nucleotideGenotype: true
     },
     advancedView: {}
 }
