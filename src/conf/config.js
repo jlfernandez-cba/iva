@@ -58,7 +58,7 @@ const ebiWS = {
 
 const application = {
     title: "IVA-ACCI",
-    version: "v0.9.0",
+    version: "v1.0.0",
     logo: "img/cbra_logo_initial.png",
     notifyEventMessage: "notifymessage",
     session: {
