@@ -23,7 +23,8 @@ const filter = {
     tooltip: {
         classes: "qtip-dark qtip-rounded qtip-shadow"
     },
-    sections: [
+    skipSubsections: [],    // controls which subsections are disabled and should not be displayed
+    sections: [             // sections and subsections, structure and order is respected
         {
             title: "Study",
             collapsed: false,
@@ -93,7 +94,7 @@ const filter = {
             ]
         },
         {
-            title: "Deleriousness",
+            title: "Deleteriousness",
             collapsed: true,
             subsections: [
                 {
@@ -152,14 +153,6 @@ const filter = {
     ]
 };
 
-
-const variantView = {
-    gridView : {
-        nucleotideGenotype: true
-    },
-    advancedView: {}
-}
-
 const tools = {
     browser: {
         title: "Variant Browser",
@@ -180,7 +173,11 @@ const tools = {
                 },
             },
         ],
-        filter: filter
+        filter: filter,
+        grid: {
+            showSelect: false,
+            nucleotideGenotype: false
+        }
     },
     prioritization: {
         title: "Prioritization",
@@ -201,7 +198,12 @@ const tools = {
                 },
             },
         ],
-        filter: filter
+        // This disables two subsections in the filter menu Prioritization
+        filter: Object.assign({}, filter, {skipSubsections: ["cohort", "study"]}),
+        grid: {
+            showSelect: true,
+            nucleotideGenotype: false
+        }
     },
     interpretation: {
         active: false
@@ -454,7 +456,11 @@ const tools = {
             },
         ],
         active: false,
-        filter: filter
+        filter: filter,
+        grid: {
+            showSelect: false,
+            nucleotideGenotype: true
+        }
     },
     genomeBrowser: {
         active: false,
