@@ -151,15 +151,15 @@ const filter = {
             ]
         },
         {
-            title: "VCF Filter",
+            title: "VCF Metrics",
             collapsed: true,
             subsections: [
                 {
                     id: "vcfFilterDropdown",
-                    title: "VCF Filter",
-                    filterValues: ["PASS", "QualByDepth", "FisherStrand", "RMSMappingQuality", "MappingqualityRankSumTest", "ReadPosRankSumTest", "StrandOddsRatio"],
-                    tooltip: "Fill tooltip for VCF Filter"
-                }
+                    title: "VCF FILTER",
+                    filterValues: ["PASS", "QualByDepth", "LowDepth", "FisherStrand", "RMSMappingQuality", "MappingqualityRankSumTest", "ReadPosRankSumTest", "StrandOddsRatio"],
+                    tooltip: "Fill tooltip for VCF FILTER"
+                },
             ]
         }
     ]
