@@ -21,7 +21,7 @@ const cellbase = {
 };
 
 const opencga = {
-    host: "10.233.7.18:8080/opencga-1.3.0-dev",
+    host: "10.233.7.18:8080/opencga-1.3.0-rc",
     version: "v1",
     // asUser: "researchcga", // user@project:study
     projects: [
