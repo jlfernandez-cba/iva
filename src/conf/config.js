@@ -56,7 +56,7 @@ const ebiWS = {
 
 const application = {
     title: "MMP-SAS",
-    version: "v1.0.1",
+    version: "v1.0.2",
     logo: "img/cbra_logo_initial.png",
     notifyEventMessage: "notifymessage",
     session: {
