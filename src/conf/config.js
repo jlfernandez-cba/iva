@@ -22,7 +22,7 @@ const cellbase = {
 
 const opencga = {
     // host: "bioinfodev.hpc.cam.ac.uk/hgva-1.2.0-dev",
-    host: "bioinfo.hpc.cam.ac.uk/hgva",
+    host: "192.168.150.131:8080/opencga-1.3.0-rc",
     version: "v1",
     // asUser: "researchcga", // user@project:study
     projects: [
@@ -175,6 +175,7 @@ const application = {
         {name: "Tutorial", url: "http://docs.opencb.org/display/iva/Tutorials", icon: ""},
         {name: "Source code", url: "https://github.com/opencb/iva", icon: "fa fa-github"},
         {name: "Contact", url: "http://docs.opencb.org/display/iva/About", icon: "fa fa-envelope"},
+        {name: "Issue Report", url: "http://issues.clinbioinfosspa.es/", icon: "fa fa-bug"},
         {name: "FAQ", url: "", icon: ""},
         {name: "Version 0.9.0", url: "https://github.com/babelomics/iva", icon: ""},
     ],
