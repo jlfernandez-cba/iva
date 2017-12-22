@@ -56,7 +56,7 @@ const ebiWS = {
 
 const application = {
     title: "IVA",
-    version: "v1.0.0",
+    version: "v1.0.3",
     logo: "img/opencb-logo.png",
     notifyEventMessage: "notifymessage",
     session: {
@@ -174,7 +174,9 @@ const application = {
         {name: "Tutorial", url: "http://docs.opencb.org/display/iva/Tutorials", icon: ""},
         {name: "Source code", url: "https://github.com/opencb/iva", icon: "fa fa-github"},
         {name: "Contact", url: "http://docs.opencb.org/display/iva/About", icon: "fa fa-envelope"},
+        {name: "Issue Report", url: "http://issues.clinbioinfosspa.es/", icon: "fa fa-bug"},
         {name: "FAQ", url: "", icon: ""},
+        {name: "Version 0.9.0", url: "https://github.com/babelomics/iva", icon: ""},
     ],
     login: {
         visibility: "public",
