@@ -82,7 +82,7 @@ const application = {
         {
             id: "prioritization",
             title: "Prioritization",
-            visibility: "none",
+            visibility: "private",
         },
         {
             id: "analysis",
