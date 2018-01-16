@@ -16,7 +16,7 @@
 
 const cellbase = {
     // hosts: ["bioinfodev.hpc.cam.ac.uk/cellbase-4.5.0-rc.1.1"],
-    hosts: ["bioinfo.hpc.cam.ac.uk/cellbase"],
+    hosts: ["cellbase.clinbioinfosspa.es/cb"],
     version: "v4",
 };
 
@@ -58,7 +58,7 @@ const ebiWS = {
 
 const application = {
     title: "IVA-ACCI",
-    version: "v1.0.3",
+    version: "v1.0.4",
     logo: "img/cbra_logo_initial.png",
     notifyEventMessage: "notifymessage",
     session: {
