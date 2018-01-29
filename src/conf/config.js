@@ -55,7 +55,7 @@ const ebiWS = {
 };
 
 const mmpExtensionWS = {
-    root: "http://localhost:3000/api/",
+    root: "http://10.233.7.18:3000/api/",
     panel: "panel/",
     gene: "gene/"
 };
