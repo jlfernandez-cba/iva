@@ -62,7 +62,7 @@ const mmpExtensionWS = {
 
 const application = {
     title: "MMP-SAS",
-    version: "v1.0.4",
+    version: "v1.1.0",
     logo: "img/cbra_logo_initial.png",
     notifyEventMessage: "notifymessage",
     language: "es",
