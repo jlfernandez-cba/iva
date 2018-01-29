@@ -55,11 +55,6 @@ const ebiWS = {
     search: "/search"
 };
 
-const mmpExtensionWS = {
-    root: "http://localhost:3000/api/",
-    panel: "panel/",
-    gene: "gene/"
-}
 
 const application = {
     title: "IVA",
