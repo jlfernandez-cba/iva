@@ -58,6 +58,11 @@ const filter = {
                     tooltip: "Filter out variants falling outside the genomic intervals (typically genes) defined by the panel(s) chosen"
                 },
                 {
+                    id: "externalPanels",
+                    title: "External Panels",
+                    tooltip: "External panel tooltip"
+                },
+                {
                     id: "biotype",
                     title: "Biotype",
                     tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
@@ -471,7 +476,8 @@ const tools = {
         filter: filter,
         grid: {
             showSelect: true,
-            nucleotideGenotype: true
+            nucleotideGenotype: true,
+            downloadQcSample: false
         }
     },
     genomeBrowser: {

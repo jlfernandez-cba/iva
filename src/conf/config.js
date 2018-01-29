@@ -54,11 +54,18 @@ const ebiWS = {
     search: "/search"
 };
 
+const mmpExtensionWS = {
+    root: "http://localhost:3000/api/",
+    panel: "panel/",
+    gene: "gene/"
+};
+
 const application = {
     title: "MMP-SAS",
     version: "v1.0.4",
     logo: "img/cbra_logo_initial.png",
     notifyEventMessage: "notifymessage",
+    language: "es",
     session: {
         // 60000 ms = 1 min
         checkTime: 60000,

@@ -228,7 +228,7 @@
                                            aria-haspopup="true" aria-expanded="false">
                                             Studies <span class="caret"></span>
                                         </a>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu pre-scrollable">
                                             <template is="dom-repeat" items="{{projects}}" as="proj">
                                                 <li><a><b>{{proj.name}}</b></a></li>
                                                 <template is="dom-repeat" items="{{proj.studies}}" as="std">
@@ -363,7 +363,7 @@
                                                 active="{{config.tools.prioritization.active}}" ebi-config="{{config.ebiWS}}"
                                                 population-frequencies="{{populationFrequencies}}"
                                                 protein-substitution-scores="{{proteinSubstitutionScores}}"
-                                                consequence-types="{{consequenceTypes}}"
+                                                consequence-types="{{consequenceTypes}}" mmp-extension-config="{{config.mmpExtensionWS}}"
                                                 beacon-hosts="{{config.tools.beacon.hosts}}" on-gene="geneSelected"
                                                 on-samplechange="onSampleChange" style="font-size: 12px">
                         </variant-prioritization>
@@ -377,9 +377,9 @@
                                           config="{{config.tools.clinical}}" biotypes="{{config.biotypes}}"
                                           population-frequencies="{{populationFrequencies}}"
                                           protein-substitution-scores="{{proteinSubstitutionScores}}"
-                                          consequence-types="{{consequenceTypes}}" ebi-config="{{config.ebiWS}}"
+                                          consequence-types="{{consequenceTypes}}" ebi-config="{{config.ebiWS}}"  mmp-extension-config="{{config.mmpExtensionWS}}"
                                           opencga-client="{{opencgaClient}}" cellbase-client="{{cellbaseClient}}" ebi-config="{{config.ebiWS}}"
-                                          on-notifymessage="onNotifyMessage" event-notify-name="{{config.notifyEventMessage}}">
+                                          on-notifymessage="onNotifyMessage" event-notify-name="{{config.notifyEventMessage}}" i18n="{{i18n.clinical}}">
                         </variant-clinical>
                     </div>
                 </template>
@@ -534,6 +534,9 @@
                     config: {
                         type: Object
                     },
+                    i18n: {
+                        type: Object
+                    },
                     opencgaClient: {
                         type: Object
                     },
@@ -584,12 +587,14 @@
                 this.config.menu.counter = 0;
                 this.config.cellbase = cellbase;
                 this.set("config.ebiWS", ebiWS);
+                this.set("config.mmpExtensionWS", mmpExtensionWS);
                 this.set('config.tools', tools);
                 this.set('opencga', opencga);
                 this.set('config.opencga', opencga);
                 this.config.species = DEFAULT_SPECIES;
                 this.config.enabledComponents = {};
                 this.config.biotypes = biotypes;
+                this.i18n = i18n[application.language];
 
                 // Enabled components tools
                 for (let tool in this.config.tools) {
