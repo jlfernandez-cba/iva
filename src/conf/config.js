@@ -22,7 +22,7 @@ const cellbase = {
 
 const opencga = {
     // host: "bioinfodev.hpc.cam.ac.uk/hgva-1.2.0-dev",
-    host: "bioinfodev.hpc.cam.ac.uk/hgva-1.3.0-rc",
+    host: "localhost:8080/opencga-1.3.0-rc",
     version: "v1",
     // asUser: "researchcga", // user@project:study
     projects: [
@@ -55,11 +55,18 @@ const ebiWS = {
     search: "/search"
 };
 
+const mmpExtensionWS = {
+    root: "http://localhost:3000/api/",
+    panel: "panel/",
+    gene: "gene/"
+}
+
 const application = {
     title: "IVA",
     version: "v0.9.0",
     logo: "img/opencb-logo.png",
     notifyEventMessage: "notifymessage",
+    language: "es",
     session: {
         // 60000 ms = 1 min
         checkTime: 60000,
