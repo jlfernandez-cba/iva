@@ -113,7 +113,7 @@ const i18n = {
                 vus: "Variantes de significado incierto",
                 unexpectedVariants: "Variantes no esperadas",
                 filterSummary: "Resumen filtrado en priorización",
-                otherInformation: "Otra Información",
+                otherInformation: "Información adicional",
                 editableConclusions: "Conclusiones editables",
                 noFiltersApplied : "No se han aplicado filtros para este análisis",
                 filtersAppliedPrioritization: "Para este análisis, se han aplicado los siguientes filtros",
