@@ -279,6 +279,36 @@ const populationFrequencies = {
             ],
         },
         {
+            id: "GNOMAD_EXOMES",
+            title: "gnomAD Exomes",
+            populations: [
+                {
+                    id: "ALL",
+                    title: "gnomAD [ALL]",
+                },
+                {
+                    id: "NFE",
+                    title: "Non-Finnish European [NFE]",
+                },
+                {
+                    id: "AMR",
+                    title: "American [AMR]",
+                },
+                {
+                    id: "AFR",
+                    title: "African [AFR]",
+                },
+                {
+                    id: "EAS",
+                    title: "East Asian [EAS]",
+                },
+                {
+                    id: "SAS",
+                    title: "South Asian [SAS]",
+                },
+            ],
+        },
+        {
             id: "ESP6500",
             title: "ESP6500",
             tooltip: "Only considers variants whose observed allelic frequency in the Exome Variant Server (ESP6500) database is below (or above) the defined value. ESP6500 covers only exomic positions. The frequencies were obtained using more than 6000 exomes.",
