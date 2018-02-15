@@ -585,7 +585,9 @@
                 this.config.menu.counter = 0;
                 this.config.cellbase = cellbase;
                 this.set("config.ebiWS", ebiWS);
-                this.set("config.mmpExtensionWS", mmpExtensionWS);
+                if (UtilsNew.isNotUndefinedOrNull(application.mmpExtensionWS)){
+                    this.set("config.mmpExtensionWS", application.mmpExtensionWS);
+                }
                 this.set('config.tools', tools);
                 this.set('opencga', opencga);
                 this.set('config.opencga', opencga);
