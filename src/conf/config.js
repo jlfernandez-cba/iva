@@ -56,7 +56,7 @@ const ebiWS = {
 
 const application = {
     title: "MMP-SAS",
-    version: "v1.1.2",
+    version: "v1.1.3",
     logo: "img/cbra_logo_initial.png",
     notifyEventMessage: "notifymessage",
     mmpExtensionWS: {
