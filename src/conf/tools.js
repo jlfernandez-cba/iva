@@ -133,8 +133,13 @@ const filter = {
                 },
                 {
                     id: "geneDiseasePanels",
-                    title: "Gene Disease Panels",
-                    tooltip: "Filter out variants falling outside the genomic intervals (typically genes) defined by the panel(s) chosen"
+                    title: "Gene Disease Panels(PanelApp)",
+                    tooltip: "Filter out variants falling outside the genomic intervals (typically genes) defined by the panel(s) chosen(PanelApp)"
+                },
+                {
+                    id: "externalPanels",
+                    title: "MMP Panels",
+                    tooltip: "Filter out variants falling outside the genomic intervals (typically genes) defined by the panel(s) chosen(MMP Panels)"
                 },
                 {
                     id: "biotype",
@@ -559,7 +564,7 @@ const tools = {
         grid: {
             showSelect: true,
             nucleotideGenotype: true,
-            downloadQcSample: false
+            downloadQcSample: true
         }
     },
     genomeBrowser: {
