@@ -57,7 +57,7 @@ const ebiWS = {
 
 const application = {
     title: "IVA",
-    version: "v1.0.5",
+    version: "v1.0.6",
     logo: "img/opencb-logo.png",
     notifyEventMessage: "notifymessage",
     session: {
