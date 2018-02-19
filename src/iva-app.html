@@ -655,8 +655,8 @@
                 } else {
 //                    $(this.tool).show();
 //                    this.$["home"].style.display = 'inline';
-                    console.log($(this.tool))
-                    console.log(this.$.home)
+//                     console.log($(this.tool));
+//                     console.log(this.$.home);
                 }
 
                 this.init();
@@ -1094,7 +1094,7 @@
 
                     // we empty everything
 //                    console.log(this.breadcrumbElement)
-                    PolymerUtils.innerHTML("breadcrumb", "")
+                    PolymerUtils.innerHTML("breadcrumb", "");
                     // we add the 'Projects' link
                     let projects = this._createBreadcrumbElement(this.config.breadcrumb.title, false, this.config.breadcrumb.title);
                     breadcrumbElement.appendChild(projects);
@@ -1156,6 +1156,11 @@
             }
 
             _createBreadcrumbElement(name, active, category) {
+                // name can be undefined when Polymer initialise
+                if (typeof name === "undefined") {
+                    name = "undefined";
+                }
+
                 let li = document.createElement("li");
                 if (active === true) {
                     li.setAttribute("class", "active");
