@@ -33,7 +33,7 @@ const filter = {
                     id: "sample",
                     title: "Samples",
                     selector: true,
-                    segregations: ["Autosomal Dominant", "Autosomal Recessive", "Compound Heterocygotous", "Recessive X-linked"],
+                    segregations: [{key: "none",text: "Select..."}, {key: "autoDominant", text: "Autosomal Dominant"}, {key: "autoRecessive", text: "Autosomal Recessive"}, {key:"xLinked", text: "X linked"}, {key: "yLinked", text: "Y linked"}],
                     tooltip: "Filter by sample genotypes"
                 },
                 {
@@ -499,7 +499,8 @@ const tools = {
         filter: filter,
         grid: {
             showSelect: true,
-            nucleotideGenotype: true
+            nucleotideGenotype: true,
+            downloadQcSample: false
         }
     },
     genomeBrowser: {
