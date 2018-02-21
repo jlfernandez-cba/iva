@@ -21,7 +21,7 @@ const cellbase = {
 };
 
 const opencga = {
-    host: "iva-enod.clinbioinfosspa.es:8080/opencga-1.3.0-rc",
+    host: "iva-enod.clinbioinfosspa.es:8080/opencga-1.3.2",
     version: "v1",
     // asUser: "researchcga", // user@project:study
     projects: [
@@ -56,7 +56,7 @@ const ebiWS = {
 
 const application = {
     title: "IVA",
-    version: "v1.0.4",
+    version: "v1.1.0",
     logo: "img/opencb-logo.png",
     notifyEventMessage: "notifymessage",
     session: {
