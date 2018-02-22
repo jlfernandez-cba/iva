@@ -60,7 +60,7 @@ const application = {
     logo: "img/cbra_logo_initial.png",
     notifyEventMessage: "notifymessage",
     mmpExtensionWS: {
-        root: "http://10.233.7.18:3000/api/",
+        root: "http://10.233.7.18:1688/api/",
         panel: "panel/",
         gene: "gene/"
     },
