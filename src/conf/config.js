@@ -22,7 +22,7 @@ const cellbase = {
 
 const opencga = {
     //host: "bioinfodev.hpc.cam.ac.uk/hgva-1.2.0-dev",
-    host: "iva-nagen.clinbioinfosspa.es:8080/opencga-1.3.0-rc",
+    host: "iva-nagen.clinbioinfosspa.es:8080/opencga-1.3.2",
     version: "v1",
     // asUser: "researchcga", // user@project:study
     projects: [
@@ -57,7 +57,7 @@ const ebiWS = {
 
 const application = {
     title: "IVA-NAGEN",
-    version: "v1.0.5",
+    version: "v1.1.0",
     logo: "img/opencb-logo.png",
     notifyEventMessage: "notifymessage",
     session: {
@@ -228,27 +228,29 @@ const populationFrequencies = {
                     title: "African [AFR]",
                 },
                 {
-                    id: "SAS",
-                    title: "South Asian [SAS]",
-                },
-                {
                     id: "EAS",
                     title: "East Asian [EAS]",
                 },
                 {
+<<<<<<< HEAD
                     id: "IBS",
                     title: "Iberian [IBS]",
                 },
+=======
+                    id: "SAS",
+                    title: "South Asian [SAS]",
+                }
+>>>>>>> develop
             ],
         },
         {
-            id: "EXAC",
-            title: "ExAC",
-            tooltip: "Only considers variants whose observed allelic frequency in the The Exome Aggregation Consortium (ExAC) database is below (or above) the defined value. ExAC covers only exomic positions. The frequencies were obtained using more than 60.000 exomes.",
+            id: "GNOMAD_GENOMES",
+            title: "gnomAD Genomes",
+            tooltip: "Only considers variants whose observed allelic frequency in the gnomAD Genomes database is below (or above) the defined value. Frequencies were calculated from about 15,000 unrelated individuals.",
             populations: [
                 {
                     id: "ALL",
-                    title: "ExAC [ALL]",
+                    title: "gnomAD [ALL]",
                 },
                 {
                     id: "NFE",
@@ -257,6 +259,10 @@ const populationFrequencies = {
                 {
                     id: "AMR",
                     title: "American [AMR]",
+                },
+                {
+                    id: "AFR",
+                    title: "African [AFR]",
                 },
                 {
                     id: "EAS",
