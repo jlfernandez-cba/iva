@@ -57,7 +57,7 @@ const ebiWS = {
 
 const application = {
     title: "IVA-NAGEN",
-    version: "v1.1.0",
+    version: "v1.1.1",
     logo: "img/opencb-logo.png",
     notifyEventMessage: "notifymessage",
     session: {
