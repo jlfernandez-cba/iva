@@ -21,7 +21,7 @@ const cellbase = {
 };
 
 const opencga = {
-    host: "iva-acci.clinbioinfosspa.es:8080/opencga-1.3.0-rc",
+    host: "iva-acci.clinbioinfosspa.es:8080/opencga-1.3.2",
     // host: "localhost:8080/opencga-1.3.0-dev",
     // host: "bioinfodev.hpc.cam.ac.uk/hgva-1.2.0-dev",
     version: "v1",
@@ -229,10 +229,6 @@ const populationFrequencies = {
                     title: "African [AFR]",
                 },
                 {
-                    id: "SAS",
-                    title: "South Asian [SAS]",
-                },
-                {
                     id: "EAS",
                     title: "East Asian [EAS]",
                 },
@@ -240,16 +236,21 @@ const populationFrequencies = {
                     id: "IBS",
                     title: "Iberian [IBS]",
                 },
+                {
+                    id: "SAS",
+                    title: "South Asian [SAS]",
+                }
+
             ],
         },
         {
-            id: "EXAC",
-            title: "ExAC",
-            tooltip: "Only considers variants whose observed allelic frequency in the The Exome Aggregation Consortium (ExAC) database is below (or above) the defined value. ExAC covers only exomic positions. The frequencies were obtained using more than 60.000 exomes.",
+            id: "GNOMAD_GENOMES",
+            title: "gnomAD Genomes",
+            tooltip: "Only considers variants whose observed allelic frequency in the gnomAD Genomes database is below (or above) the defined value. Frequencies were calculated from about 15,000 unrelated individuals.",
             populations: [
                 {
                     id: "ALL",
-                    title: "ExAC [ALL]",
+                    title: "gnomAD [ALL]",
                 },
                 {
                     id: "NFE",
@@ -258,6 +259,10 @@ const populationFrequencies = {
                 {
                     id: "AMR",
                     title: "American [AMR]",
+                },
+                {
+                    id: "AFR",
+                    title: "African [AFR]",
                 },
                 {
                     id: "EAS",
