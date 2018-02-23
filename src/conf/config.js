@@ -232,15 +232,15 @@ const populationFrequencies = {
                     title: "East Asian [EAS]",
                 },
                 {
-<<<<<<< HEAD
                     id: "IBS",
                     title: "Iberian [IBS]",
                 },
-=======
+                {
+
                     id: "SAS",
                     title: "South Asian [SAS]",
                 }
->>>>>>> develop
+
             ],
         },
         {
