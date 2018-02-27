@@ -1,4 +1,3 @@
-const data = {};
 const i18n = {
     en: {
         clinical: {
@@ -60,7 +59,25 @@ const i18n = {
                 interpretationText1: "--",
                 interpretationText2: "--",
                 interpretationText3: "--",
-                interpretationText4: "--"
+                interpretationText4: "--",
+                carrier: "Carrier",
+                presymptomatic: "Pre-symptomatic",
+                probandus:"Probandus",
+                sonof: "Son of",
+                daughterof: "Daughter of",
+                motherof: "Mother of",
+                fatherof: "Father of",
+                brotherof: "Brother of",
+                sisterof: "Sister of",
+                other: "Other",
+                dr: "Dr.",
+                dra: "Dra.",
+                antinolo: "Antiñolo",
+                fernandez: "Fernández",
+                marcos: "Marcos",
+                bravo: "Bravo",
+                mendez: "Méndez",
+                borrego: "Borrego",
             }
         }
     },
@@ -125,10 +142,11 @@ const i18n = {
                 interpretationText1: " no porta ninguna mutación patogénica en los genes incluidos en el presente estudio.",
                 interpretationText2_1: "En el estudio realizado se ha obtenido una profundidad media de ",
                 interpretationText2_2: "X con el ",
-                interpretationText2_3: "% de las bases cubiertas. Todas las regiones analizadas presentan una profundidad superior a 10x.",
+                interpretationText2_3: "% de las bases cubiertas. Todas las regiones analizadas presentan una profundidad superior a 20x.",
                 interpretationText3: "La metodología utilizada está dirigida a la identificación de variantes incluidas en regiones exónicas o de splicing, ya sean mutaciones puntuales (sustituciones nucleotídicas o pequeñas inserciones o deleciones) o CNVs, quedando esta identificación vinculada a las limitaciones inherentes a los distintos programas utilizados. Para la detección de otros tipos de mutaciones o de variantes localizadas en regiones no incluidas en el diseño, se debe recurrir a técnicas diferentes a las aquí mencionadas.",
                 interpretation1_positive: "El paciente debe recibir consejo genético en una consulta especializada y debe ser inclida en un programa de detección temprana de los cánceres relacionados.",
-                interpretationText4: "Este estudio no descarta la presencia de mutaciones patogénicas en genes asociados a otros tipos de neuropatías no incluidos en este análisis.",
+                interpretationText4_1: "Este estudio no descarta la presencia de mutaciones patogénicas en genes asociados ",
+                interpretationText4_2: " no incluidos en este análisis.",
                 methodology: "Metodología",
                 methodologyText1: "Extracción automática de ADN (MagnaPure)",
                 methodologyText2: "Secuenciación masiva utilizando la tecnología de captura SeqCap EZ Choice Library (NimbleGen) y el secuenciador NextSeq (Illumina).",
@@ -171,7 +189,25 @@ const i18n = {
                 attached1: "Anexo 1",
                 reference: "Reference",
                 heterocigosis: "Heterocigosis",
-                homocigosis: "Homocigosis"
+                homocigosis: "Homocigosis",
+                carrier: "De portador",
+                presymptomatic: "Presíntomatico",
+                probandus:"Proband",
+                sonof: "Hijo de",
+                daughterof: "Hija de",
+                motherof: "Madre de",
+                fatherof: "Padre de",
+                brotherof: "Hermano de",
+                sisterof: "Hermana de",
+                other: "Otro",
+                dr: "Dr.",
+                dra: "Dra.",
+                antinolo: "Antiñolo",
+                fernandez: "Fernández",
+                marcos: "Marcos",
+                bravo: "Bravo",
+                mendez: "Méndez",
+                borrego: "Borrego",
             }
         }
     }
