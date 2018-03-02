@@ -55,7 +55,6 @@ const ebiWS = {
     search: "/search"
 };
 
-
 const application = {
     title: "IVA",
     version: "v0.9.0",
