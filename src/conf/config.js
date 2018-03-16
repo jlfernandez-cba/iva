@@ -56,7 +56,7 @@ const ebiWS = {
 
 const application = {
     title: "IVA",
-    version: "v1.1.0",
+    version: "v1.1.1",
     logo: "img/opencb-logo.png",
     notifyEventMessage: "notifymessage",
     session: {
@@ -76,6 +76,11 @@ const application = {
         {
             id: "clinical",
             title: "Clinical",
+            visibility: "public",
+        },
+        {
+            id: "panel",
+            title: "Panels",
             visibility: "public",
         },
         {
@@ -156,11 +161,11 @@ const application = {
                 },
             ],
         },
-        {
-            id: "genomeBrowser",
-            title: "Genome Browser",
-            visibility: "public",
-        },
+        // {
+        //     id: "genomeBrowser",
+        //     title: "Genome Browser",
+        //     visibility: "public",
+        // },
     ],
     search: {
         placeholder: "Search",
