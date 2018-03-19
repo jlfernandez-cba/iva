@@ -15,13 +15,12 @@
  */
 
 const cellbase = {
-    // hosts: ["bioinfodev.hpc.cam.ac.uk/cellbase-4.5.0-rc.1.1"],
-    hosts: ["cellbase.clinbioinfosspa.es/cb"],
+    hosts: ["http://cellbase.clinbioinfosspa.es/cb"],
     version: "v4",
 };
 
 const opencga = {
-    host: "iva-enod.clinbioinfosspa.es:8080/opencga-1.3.2",
+    host: "http://iva-enod.clinbioinfosspa.es:8080/opencga-1.3.2",
     version: "v1",
     // asUser: "researchcga", // user@project:study
     projects: [
