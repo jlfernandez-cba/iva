@@ -21,7 +21,7 @@ const cellbase = {
 };
 
 const opencga = {
-    host: "iva-ext.clinbioinfosspa.es:8080/opencga-1.3.2",
+    host: "http://iva-ext.clinbioinfosspa.es:8080/opencga-1.3.2",
     version: "v1",
     // asUser: "researchcga", // user@project:study
     projects: [
