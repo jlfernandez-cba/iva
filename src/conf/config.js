@@ -76,7 +76,7 @@ const application = {
         {
             id: "interpretation",
             title: "Variant Interpretation",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "clinical",
@@ -86,12 +86,12 @@ const application = {
         {
             id: "facet",
             title: "Facets",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "panel",
             title: "Panels",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "analysis",
