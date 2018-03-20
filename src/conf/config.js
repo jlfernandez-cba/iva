@@ -22,8 +22,6 @@ const cellbase = {
 
 const opencga = {
     host: "iva-acci.clinbioinfosspa.es:8080/opencga-1.3.2",
-    // host: "localhost:8080/opencga-1.3.0-dev",
-    // host: "bioinfodev.hpc.cam.ac.uk/hgva-1.2.0-dev",
     version: "v1",
     // asUser: "researchcga", // user@project:study
     projects: [
@@ -58,7 +56,7 @@ const ebiWS = {
 
 const application = {
     title: "IVA-ACCI",
-    version: "v1.1.1",
+    version: "v1.1.2",
     logo: "img/cbra_logo_initial.png",
     notifyEventMessage: "notifymessage",
     session: {
@@ -76,14 +74,24 @@ const application = {
             visibility: "none",
         },
         {
+            id: "interpretation",
+            title: "Variant Interpretation",
+            visibility: "public",
+        },
+        {
             id: "clinical",
             title: "Start",
             visibility: "public",
         },
         {
-            id: "prioritization",
-            title: "Prioritization",
-            visibility: "none",
+            id: "facet",
+            title: "Facets",
+            visibility: "public",
+        },
+        {
+            id: "panel",
+            title: "Panels",
+            visibility: "public",
         },
         {
             id: "analysis",
@@ -111,11 +119,6 @@ const application = {
                     visibility: "public",
                 },
             ],
-        },
-        {
-            id: "facet",
-            title: "Facets (New!)",
-            visibility: "none",
         },
         {
             id: "beacon",
@@ -155,8 +158,8 @@ const application = {
                     id: "exporter",
                     title: "Exporter",
                     visibility: "public",
-                },
-            ],
+                }
+            ]
         },
         {
             id: "genomeBrowser",
@@ -209,28 +212,24 @@ const populationFrequencies = {
         {
             id: "1kG_phase3",
             title: "1000 Genomes",
-            tooltip: "Only considers variants whose observed allelic frequency in the 1000 genomes phase 3 database is below (or above) the defined value. Genome-wide allelic frequencies were obtained from more than 2.500 genomes.",
+            tooltip: "Only considers variants whose observed allelic frequency in the 1000 genomes phase 3 database is below (or above) " +
+            "the defined value. Genome-wide allelic frequencies were obtained from more than 2.500 genomes.",
             populations: [
                 {
-                    id: "ALL",
-                    title: "All populations [ALL]",
+                    id: "ALL", title: "All populations [ALL]",
                     active: true,
                 },
                 {
-                    id: "EUR",
-                    title: "European [EUR]",
+                    id: "EUR", title: "European [EUR]",
                 },
                 {
-                    id: "AMR",
-                    title: "American [AMR]",
+                    id: "AMR", title: "American [AMR]",
                 },
                 {
-                    id: "AFR",
-                    title: "African [AFR]",
+                    id: "AFR", title: "African [AFR]",
                 },
                 {
-                    id: "EAS",
-                    title: "East Asian [EAS]",
+                    id: "EAS", title: "East Asian [EAS]",
                 },
                 {
                     id: "IBS",
@@ -238,7 +237,7 @@ const populationFrequencies = {
                 },
                 {
                     id: "SAS",
-                    title: "South Asian [SAS]",
+                    title: "South Asian [SAS]", 
                 }
 
             ],
@@ -246,48 +245,40 @@ const populationFrequencies = {
         {
             id: "GNOMAD_GENOMES",
             title: "gnomAD Genomes",
-            tooltip: "Only considers variants whose observed allelic frequency in the gnomAD Genomes database is below (or above) the defined value. Frequencies were calculated from about 15,000 unrelated individuals.",
+            tooltip: "Only considers variants whose observed allelic frequency in the gnomAD Genomes database is below (or above) the " +
+            "defined value. Frequencies were calculated from about 15,000 unrelated individuals.",
             populations: [
                 {
-                    id: "ALL",
-                    title: "gnomAD [ALL]",
+                    id: "ALL", title: "gnomAD [ALL]",
                 },
                 {
-                    id: "NFE",
-                    title: "Non-Finnish European [NFE]",
+                    id: "NFE", title: "Non-Finnish European [NFE]",
                 },
                 {
-                    id: "AMR",
-                    title: "American [AMR]",
+                    id: "AMR", title: "American [AMR]",
                 },
                 {
-                    id: "AFR",
-                    title: "African [AFR]",
+                    id: "AFR", title: "African [AFR]",
                 },
                 {
-                    id: "EAS",
-                    title: "East Asian [EAS]",
+                    id: "EAS", title: "East Asian [EAS]",
                 },
                 {
-                    id: "SAS",
-                    title: "South Asian [SAS]",
+                    id: "SAS", title: "South Asian [SAS]",
                 },
             ],
         },
         {
             id: "ESP6500",
             title: "ESP6500",
-            tooltip: "Only considers variants whose observed allelic frequency in the Exome Variant Server (ESP6500) database is below (or above) the defined value. ESP6500 covers only exomic positions. The frequencies were obtained using more than 6000 exomes.",
+            tooltip: "Only considers variants whose observed allelic frequency in the Exome Variant Server (ESP6500) database is below " +
+            "(or above) the defined value. ESP6500 covers only exomic positions. The frequencies were obtained from more than 6000 exomes.",
             populations: [
                 {
-                    id: "EA",
-                    title: "European American [EA]",
-                    active: true,
+                    id: "EA", title: "European American [EA]"
                 },
                 {
-                    id: "AA",
-                    title: "African American [AA]",
-                    active: true,
+                    id: "AA", title: "African American [AA]",
                 },
             ],
         },
