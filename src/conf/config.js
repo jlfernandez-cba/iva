@@ -55,8 +55,8 @@ const ebiWS = {
 };
 
 const application = {
-    title: "IVA-ACCI",
-    version: "v1.1.2",
+    title: "IVA-EXT",
+    version: "v1.0.0",
     logo: "img/cbra_logo_initial.png",
     notifyEventMessage: "notifymessage",
     session: {
@@ -237,7 +237,7 @@ const populationFrequencies = {
                 },
                 {
                     id: "SAS",
-                    title: "South Asian [SAS]", 
+                    title: "South Asian [SAS]",
                 }
 
             ],
