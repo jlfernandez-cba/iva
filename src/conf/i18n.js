@@ -148,13 +148,18 @@ const i18n = {
                 interpretationText4_1: "Este estudio no descarta la presencia de mutaciones patogénicas en genes asociados ",
                 interpretationText4_2: " no incluidos en este análisis.",
                 methodology: "Metodología",
-                methodologyText1: "Extracción automática de ADN (ChemagicTM 360)",
+                methodologyText1: "Extracción automática de ADN (Chemagic TM 360).",
                 methodologyText2: "Secuenciación masiva utilizando la tecnología de captura SeqCap EZ Choice Library (NimbleGen) y el secuenciador NextSeq (Illumina).",
                 methodologyText3: "Análisis bioinformático:",
+              
+                methodologyText3_0: "Amplificación por PCR y secuenciación directa ",
+
                 methodologyText3_1: "Alineamiento de las secuencias frente al genoma de referencia (hg19) con el programa BWA. Eliminación de duplicados mediante la herramienta PICARD.",
                 methodologyText3_2: "Identificación de mutaciones puntuales y pequeñas deleciones o inserciones realizando la llamada y filtrado de variantes con el programa GATK y la anotación de las mismas con la herramienta Cellbase.",
                 methodologyText3_3: "Análisis de CNVs mediante el paquete de programas BEDtools y posterior normalización.",
                 methodologyText3_4: "Búsqueda de las variantes identificadas en las siguientes bases de datos públicas: 1000G, dbSNP, ExAC, EVS, GenomADm CSVS y DGV. Se han considerado benignas aquellas con una MAF > 1%, en bases de datos públicas o privadas de nuestra población.",
+                methodologyText3_4_0: "Electroforesis y análisis de la secuenciación (ABI3730; SeqScape, Life Technologies)",
+              
                 methodologyText4: "La nomenclatura de las mutaciones está basada en las recomendaciones de la Human Genome Variation Society (HGVS, www.hgvs.org/mutnomen).",
                 methodologyText5: "El proceso de análisis se ha enfocado exclusivamente en los genes descritos hasta la fecha como asociados a la patología en estudio e incluidos en el panel utilizado. Las secuencias de referencia utilizadas para dichos genes se adjuntan en el anexo 1.",
                 methodologyText6: "La muestra de ADN de   paciente se conserva en la UGCMMFGR desde la recepción de la misma. Dicha muestra se almacenará indefinidamente a menos que  paciente o su representante legal revoque el consentimiento informado otorgado previamente.Si se copia o transfiere este informe debe hacerse en su totalidad.",
