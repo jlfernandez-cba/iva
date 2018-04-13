@@ -101,7 +101,7 @@ const i18n = {
                 chroGender: "Sexo cromosómico",
                 affectationStatus: "Tipo de paciente",
                 ethnicity: "Etnia",
-                yearBirth: "Año de Nacimiento",
+                yearBirth: "Fecha de Nacimiento",
                 hpo: "Término HPO",
                 diagnosis: "Diagnóstico",
                 parentalConsanguinity: "Consanguinidad Parental",
