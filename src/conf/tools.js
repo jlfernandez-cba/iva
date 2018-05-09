@@ -398,7 +398,7 @@ const tools = {
                 queryParams: {
                     useSearchIndex: "yes",
                     approximateCount: true,
-                    approximateCountSamplingSize: 200000,
+                    approximateCountSamplingSize: 20000,
                     timeout: 30000
                 }
             }
