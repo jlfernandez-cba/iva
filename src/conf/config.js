@@ -16,7 +16,7 @@
 
 const cellbase = {
     // hosts: ["bioinfodev.hpc.cam.ac.uk/cellbase-4.5.0-rc.1.1"],
-    hosts: ["cellbase.clinbioinfosspa.es/cb"],
+    hosts: ["http://cellbase.clinbioinfosspa.es/cb"],
     version: "v4",
 };
 
@@ -55,7 +55,7 @@ const opencga = {
 
 const application = {
     title: "IVA",
-    version: "v1.1.2",
+    version: "v1.1.3",
     logo: "img/opencb-logo.png",
     // The order, title and nested submenus are respected
     menu: [
