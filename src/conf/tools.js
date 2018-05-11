@@ -386,13 +386,23 @@ const tools = {
                 queryParams: {
                     useSearchIndex: "yes",
                     approximateCount: true,
-                    approximateCountSamplingSize: 5000,
+                    approximateCountSamplingSize: 20000,
                     timeout: 30000
                 }
             }
         },
         report: {
             visible: true,
+            setUp: {
+                title: "Report",
+                sections: [
+                    {title: "Clinical Analysis", fields: [[{label: "Analysis ID", value: "clinicalAnalysisId", visible: true, component: "opencga-clinical-report-text"}, {label: "description", value: "clinicalAnalysisDescription", visible: false, component: "opencga-clinical-report-text"}], [{label: "segunda fila", visible: true}]]},
+                    {title: "Interpretation", fields: [[{label: "tercera fila", visible: true, component: "opencga-clinical-report-text"}]]},
+                    {title: "Probando", fields: [[{label: "cuarta fila", visible: true, isDisabled: true, component: "opencga-clinical-report-text-area"}, {label: "cuarta fila 2", visible: true, isDisabled: false, component: "opencga-clinical-report-text-area"}]]}
+                ]
+
+
+            }
         },
 
 
