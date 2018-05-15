@@ -399,9 +399,62 @@ const tools = {
             setUp: {
                 title: "Report",
                 sections: [
-                    {title: "Clinical Analysis", fields: [[{label: "Analysis ID", value: "clinicalAnalysisId", visible: true, component: "opencga-clinical-report-text"}, {label: "description", value: "clinicalAnalysisDescription", visible: false, component: "opencga-clinical-report-text"}], [{label: "segunda fila", visible: true}]]},
-                    {title: "Interpretation", fields: [[{label: "tercera fila", visible: true, component: "opencga-clinical-report-text"}]]},
-                    {title: "Probando", fields: [[{label: "cuarta fila", visible: true, isDisabled: true, component: "opencga-clinical-report-text-area"}, {label: "cuarta fila 2", visible: true, isDisabled: false, component: "opencga-clinical-report-text-area"}]]}
+                    {
+                        title: "Analysis Information",
+                        fields: [
+                            [
+                                {label: "Analysis ID", value: "clinicalAnalysisId", visible: true, component: "opencga-clinical-report-text"},
+                                {label: "description", value: "clinicalAnalysisDescription", visible: true, component: "opencga-clinical-report-text"}
+                            ],
+                            [
+                                {label: "Analysis Type",value: "clinicalAnalysisType", visible: true, component: "opencga-clinical-report-text"},
+                                {label: "Date", value: "clinicalAnalysisDate", visible: true, component: "opencga-clinical-report-text"}
+                            ]
+                        ]
+                    },
+                    {
+                        title: "Interpretation Information\n",
+                        fields: [
+                            [
+                                {label: "Interpretation ID",  value: "interpretationId", visible: true, component: "opencga-clinical-report-text"},
+                                {label: "Interpretation Name", value: "interpretationName", visible: true, component: "opencga-clinical-report-text"}
+                            ]
+                        ]
+                    },
+                    {
+                        title: "Proband Information",
+                        fields: [
+                            [
+                                {label: "Patient Id",  value: "probandPatientId", visible: true, component: "opencga-clinical-report-text"},
+                                {label: "Sample Id",  value: "probandSampleId", visible: true, component: "opencga-clinical-report-text"},
+                            ],
+                            [
+                                {label: "Chromosomal Gender",  value: "probandChromosomalGender", visible: true, component: "opencga-clinical-report-text"},
+                                {label: "Affectation Status",  value: "probandAffectationStatus", visible: true, component: "opencga-clinical-report-text"},
+                            ],
+                            [
+                                {label: "Ethnicity",  value: "probandEthnicity", visible: true, component: "opencga-clinical-report-text"},
+                                {label: "Year of Birth",  value: "probandYearOfBirth", visible: true, component: "opencga-clinical-report-text"},
+                            ],
+                            [
+                                {label: "HPO", value: "probandHPO", visible: true, isDisabled: true, component: "opencga-clinical-report-text-area"},
+                                {label: "Diagnosis", value:"probandoICD10", visible: true, isDisabled: false, component: "opencga-clinical-report-text-area"}
+                            ],
+                            [
+                                {label: "Parental Consanguinity",  value: "probandParentalConsanguinity", visible: true, component: "opencga-clinical-report-text"}
+                            ],
+                            [
+                                {label: "Sample Type",  value: "probandSampleType", visible: true, component: "opencga-clinical-report-text"},
+                            ],
+                            [
+                                {label: "Cell Line",  value: "probandCellLine", visible: true, component: "opencga-clinical-report-text"}
+                            ],
+                            [
+                                {label: "Life Status",  value: "probandlifeStatus", visible: true, component: "opencga-clinical-report-text"},
+                            ]
+
+                        ]
+                    }
                 ]
 
 
