@@ -221,7 +221,7 @@ const tools = {
             nucleotideGenotype: false,
             includeMissing: true,
             queryParams: {
-                useSearchIndex: "auto",
+                useSearchIndex: "no",
                 approximateCount: true,
                 approximateCountSamplingSize: 5000,
                 timeout: 30000
@@ -259,7 +259,7 @@ const tools = {
             interpretation: true,
             includeMissing: true,
             queryParams: {
-                useSearchIndex: "yes",
+                useSearchIndex: "no",
                 approximateCount: true,
                 approximateCountSamplingSize: 1000,
                 timeout: 30000
@@ -380,7 +380,7 @@ const tools = {
 
 
         queryParams: {
-            useSearchIndex: "yes",
+            useSearchIndex: "no",
             approximateCount: true,
             approximateCountSamplingSize: 5000,
             timeout: 30000
