@@ -55,7 +55,7 @@ const opencga = {
 
 const application = {
     title: "IVA",
-    version: "v1.1.3",
+    version: "v1.1.4",
     logo: "img/opencb-logo.png",
     // The order, title and nested submenus are respected
     menu: [
@@ -80,9 +80,14 @@ const application = {
             visibility: "public",
         },
         {
-            id: "panel",
-            title: "Panels",
+            id: "beacon",
+            title: "Beacon",
             visibility: "public",
+        },
+        {
+            id: "genomeBrowser",
+            title: "Genome Browser (Beta)",
+            visibility: "public"
         },
         {
             id: "analysis",
@@ -90,11 +95,7 @@ const application = {
             visibility: "private",
             submenu: [
                 {
-                    separator: true,
-                    visibility: "public",
-                },
-                {
-                    title: "Interpretation",
+                    title: "Clinical Interpretation",
                     category: true,
                     visibility: "public",
                 },
@@ -108,21 +109,8 @@ const application = {
                     title: "Cancer",
                     visibility: "public",
                 },
-            ],
-        },
-        {
-            id: "beacon",
-            title: "Beacon",
-            visibility: "public",
-        },
-        {
-            id: "tools",
-            title: "Tools",
-            visibility: "public",
-            submenu: [
                 {
-                    id: "ibs",
-                    title: "IBS",
+                    separator: true,
                     visibility: "public",
                 },
                 {
@@ -130,18 +118,40 @@ const application = {
                     title: "Burden Test",
                     visibility: "public",
                 },
+            ],
+        },
+        {
+            id: "tools",
+            title: "Tools",
+            visibility: "public",
+            submenu: [
+                {
+                    title: "Catalog",
+                    category: true,
+                    visibility: "public",
+                },
+                {
+                    id: "samples",
+                    title: "Samples",
+                    visibility: "public",
+                },
+                {
+                    id: "panel",
+                    title: "Panels",
+                    visibility: "public",
+                },
                 {
                     separator: true,
                     visibility: "public",
                 },
                 {
-                    title: "Export",
+                    title: "Other",
                     category: true,
                     visibility: "public",
                 },
                 {
-                    id: "saturation",
-                    title: "Saturation",
+                    id: "ibs",
+                    title: "IBS",
                     visibility: "public",
                 },
                 {
@@ -150,11 +160,6 @@ const application = {
                     visibility: "public",
                 }
             ]
-        },
-        {
-            id: "genomeBrowser",
-            title: "Genome Browser",
-            visibility: "private"
         },
     ],
     search: {
@@ -188,6 +193,17 @@ const application = {
         minRemainingTime: 60000,
         // 600000 ms = 10 min = 1000(1sec) * 60(60 sec = 1min) * 10(10 min)
         maxRemainingTime: 600000
+    }
+};
+
+const sampleBrowser = {
+    title: "Sample Browser",
+    showTitle: true,
+    filter: {
+
+    },
+    grid: {
+        showSelect: true,
     }
 };
 
@@ -231,6 +247,10 @@ const populationFrequencies = {
                     id: "EAS", title: "East Asian [EAS]",
                 },
                 {
+                    id: "IBS",
+                    title: "Iberian [IBS]",
+                },
+                {
                     id: "SAS", title: "South Asian [SAS]",
                 }
             ],
@@ -272,6 +292,17 @@ const populationFrequencies = {
                 },
                 {
                     id: "AA", title: "African American [AA]",
+                },
+            ],
+        },
+        {
+            id: "MGP",
+            title: "MGP",
+            tooltip: "Only considers variants whose observed allelic frequency in the Spanish Medical Genome Project (MGP) database is below (or above) the defined value. MGP covers only exomic positions. The frequencies were obtained using up to 267 exomes.",
+            populations: [
+                {
+                    id: "ALL",
+                    title: "MGP [ALL]",
                 },
             ],
         },
