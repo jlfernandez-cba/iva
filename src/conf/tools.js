@@ -17,8 +17,7 @@
 /**
  * Created by imedina on 05/06/17.
  */
-const menuFilter = {
-    missing: true,
+const filterMenu = {
     searchButtonText: "Search",
     tooltip: {
         classes: "qtip-dark qtip-rounded qtip-shadow"
@@ -33,6 +32,7 @@ const menuFilter = {
                     id: "sample",
                     title: "Samples",
                     showApproximateCount: true,
+                    showSelectSamples: true,
                     inheritanceModes: [
                         {key: "none", text: "Select..."},
                         {key: "autoDominant", text: "Autosomal Dominant"},
@@ -51,6 +51,11 @@ const menuFilter = {
                                 {id: "ALL", name: "All"}, {id: "MXL", name: "Mexican"}
                             ],
                             EXAC: [
+                                {id: "ALL", name: "All"}
+                            ]
+                        },
+                        platinum: {
+                            illumina_platinum: [
                                 {id: "ALL", name: "All"}
                             ]
                         }
@@ -86,6 +91,13 @@ const menuFilter = {
                 {
                     id: "biotype",
                     title: "Biotype",
+                    biotypes: [
+                        "3prime_overlapping_ncrna", "IG_C_gene", "IG_C_pseudogene", "IG_D_gene", "IG_J_gene", "IG_J_pseudogene",
+                        "IG_V_gene", "IG_V_pseudogene", "Mt_rRNA", "Mt_tRNA", "TR_C_gene", "TR_D_gene", "TR_J_gene", "TR_J_pseudogene",
+                        "TR_V_gene", "TR_V_pseudogene", "antisense", "lincRNA", "miRNA", "misc_RNA", "polymorphic_pseudogene",
+                        "processed_transcript", "protein_coding", "pseudogene", "rRNA", "sense_intronic", "sense_overlapping", "snRNA",
+                        "snoRNA"
+                    ],
                     tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
                 },
                 {
@@ -215,86 +227,79 @@ const tools = {
     browser: {
         title: "Variant Browser",
         active: false,
-        queryParams: {
-            useSearchIndex: "auto",
-            approximateCount: true,
-            approximateCountSamplingSize: 5000,
-            timeout: 30000
+        filter: {
+            // This disables two subsections in the filter menu Prioritization
+            menu: Object.assign({}, filterMenu, {skipSubsections: ["sample"]}),
+            examples: [
+                {
+                    name: "Example BRCA2",
+                    active: false,
+                    query: {
+                        gene: "BRCA2",
+                        conservation: "phylop<0.001"
+                    },
+                },
+                {
+                    name: "Example OR11",
+                    query: {
+                        gene: "OR11H1",
+                        conservation: "phylop<=0.001"
+                    },
+                },
+            ]
         },
-        filters: [
-            {
-                name: "Example BRCA2",
-                query: {
-                    gene: "BRCA2",
-                    conservation: "phylop<0.001"
-                },
-            },
-            {
-                name: "Example OR11",
-                query: {
-                    gene: "OR11H1",
-                    conservation: "phylop<=0.001"
-                },
-            },
-        ],
-        // This disables two subsections in the filter menu Prioritization
-        filter: Object.assign({}, menuFilter, {skipSubsections: ["sample"]}),
         grid: {
             showSelect: false,
-            nucleotideGenotype: false
+            nucleotideGenotype: false,
+            includeMissing: true,
+            queryParams: {
+                useSearchIndex: "auto",
+                approximateCount: true,
+                approximateCountSamplingSize: 5000,
+                timeout: 30000
+            }
         }
     },
     interpretation: {
         title: "Variant Interpreter",
         active: false,
-        queryParams: {
-            useSearchIndex: "yes",
-            approximateCount: true,
-            approximateCountSamplingSize: 5000,
-            timeout: 30000
+        filter: {
+            // This disables two subsections in the filter menu Prioritization
+            menu: Object.assign({}, filterMenu, {skipSubsections: ["cohort", "study"]}),
+            examples: [
+                {
+                    name: "Clinical Interpretation (tiering)",
+                    active: true,
+                    query: {
+                        biotype: "protein_coding",
+                        alternate_frequency: "1kG_phase3:ALL<0.001;GNOMAD_GENOMES:ALL<0.001"
+                    }
+                },
+                {
+                    name: "Stickler syndrome",
+                    query: {
+                        gene: "COL11A1,COL11A2,COL2A1,COL9A1,COL9A2,COL9A3,LOXL3",
+                        biotype: "protein_coding",
+                        alternate_frequency: "1kG_phase3:ALL<0.001;GNOMAD_GENOMES:ALL<0.001"
+                    }
+                }
+            ]
         },
-        filters: [
-            {
-                name: "Example BRCA2",
-                query: {
-                    gene: "BRCA2",
-                    conservation: "phylop<0.001",
-                },
-            },
-            {
-                name: "Example OR11",
-                query: {
-                    gene: "OR11H1",
-                    conservation: "phylop<=0.001",
-                },
-            },
-        ],
-        // This disables two subsections in the filter menu Prioritization
-        filter: Object.assign({}, menuFilter, {skipSubsections: ["cohort", "study"]}),
         grid: {
             showSelect: true,
-            nucleotideGenotype: true
+            nucleotideGenotype: true,
+            interpretation: true,
+            includeMissing: true,
+            queryParams: {
+                useSearchIndex: "yes",
+                approximateCount: true,
+                approximateCountSamplingSize: 1000,
+                timeout: 30000
+            }
         }
     },
-    panel: {
-        active: false
-    },
-    gene: {
-        protein: {
-            color: {
-                synonymous_variant: "blue",
-                coding_sequence_variant: "blue",
-                missense_variant: "orange",
-                protein_altering_variant: "orange",
-                start_lost: "red",
-                stop_gained: "red",
-                stop_lost: "red",
-                stop_retained_variant: "red",
-            },
-        },
-        active: false,
-    },
     facet: {
+        title: "Facet Analysis",
         active: false,
         fields: [
             {
@@ -339,7 +344,27 @@ const tools = {
                 name: "Polyphen", value: "polyphen"
             }
         ],
-        filter: menuFilter
+        filter: {
+            menu: filterMenu
+        }
+    },
+    panel: {
+        active: false
+    },
+    gene: {
+        protein: {
+            color: {
+                synonymous_variant: "blue",
+                coding_sequence_variant: "blue",
+                missense_variant: "orange",
+                protein_altering_variant: "orange",
+                start_lost: "red",
+                stop_gained: "red",
+                stop_lost: "red",
+                stop_retained_variant: "red",
+            },
+        },
+        active: false,
     },
     beacon: {
         active: false,
@@ -349,8 +374,48 @@ const tools = {
     },
     clinical: {
         icd10: ICD_10,
+        upload: {
+            visible: true,
+        },
+        analysis: {
+            visible: true,
+        },
         interpretation: {
-            algorithms: ["Tiering", "Exomiser", "VAAST"]
+            visible: true,
+            algorithms: [
+                {id: "interactive", title: "Interactive (based on TEAM paper)"},
+                {id: "automatic", title: "Automatic", checked: true},
+            ],
+
+            // Interpretation standard config
+            title: "Interpretation",
+            filter: {
+                // This disables two subsections in the filter menu Prioritization
+                menu: Object.assign({}, filterMenu, {skipSubsections: ["cohort", "study"]}),
+                examples: []
+            },
+            grid: {
+                showSelect: true,
+                nucleotideGenotype: true,
+                includeMissing: true,
+                queryParams: {
+                    useSearchIndex: "yes",
+                    approximateCount: true,
+                    approximateCountSamplingSize: 5000,
+                    timeout: 30000
+                }
+            }
+        },
+        report: {
+            visible: true,
+        },
+
+
+        queryParams: {
+            useSearchIndex: "yes",
+            approximateCount: true,
+            approximateCountSamplingSize: 5000,
+            timeout: 30000
         },
         variableSet: {
             name: "clinical_vs",
@@ -484,7 +549,7 @@ const tools = {
             },
         ],
         active: false,
-        filter: menuFilter,
+        filter: filterMenu,
         grid: {
             showSelect: true,
             nucleotideGenotype: true,
