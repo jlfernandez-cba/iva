@@ -366,8 +366,8 @@ const tools = {
                 nucleotideGenotype: true,
                 includeMissing: true,
                 queryParams: {
-                    useSearchIndex: "yes",
-                    approximateCount: true,
+                    useSearchIndex: "no",
+                    approximateCount: false,
                     approximateCountSamplingSize: 5000,
                     timeout: 30000
                 }
@@ -380,7 +380,7 @@ const tools = {
 
         queryParams: {
             useSearchIndex: "no",
-            approximateCount: true,
+            approximateCount: false,
             approximateCountSamplingSize: 5000,
             timeout: 30000
         },
