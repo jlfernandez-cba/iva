@@ -53,7 +53,7 @@ const opencga = {
 
 const application = {
     title: "IVA-EXT",
-    version: "v1.0.1",
+    version: "v1.0.2",
     logo: "img/cbra_logo_initial.png",
     menu: [
         {
