@@ -219,12 +219,13 @@ const tools = {
         grid: {
             showSelect: false,
             nucleotideGenotype: false,
-            includeMissing: true,
+            includeMissing: false,
             queryParams: {
                 useSearchIndex: "no",
                 approximateCount: true,
                 approximateCountSamplingSize: 5000,
-                timeout: 30000
+                timeout: 30000,
+                skipCount: false
             }
         }
     },
@@ -257,12 +258,13 @@ const tools = {
             showSelect: true,
             nucleotideGenotype: true,
             interpretation: true,
-            includeMissing: true,
+            includeMissing: false,
             queryParams: {
                 useSearchIndex: "no",
                 approximateCount: true,
                 approximateCountSamplingSize: 1000,
-                timeout: 30000
+                timeout: 30000,
+                skipCount: false
             }
         }
     },
@@ -364,12 +366,13 @@ const tools = {
             grid: {
                 showSelect: true,
                 nucleotideGenotype: true,
-                includeMissing: true,
+                includeMissing: false,
                 queryParams: {
                     useSearchIndex: "no",
                     approximateCount: false,
                     approximateCountSamplingSize: 5000,
-                    timeout: 30000
+                    timeout: 30000,
+                    skipCount: false
                 }
             }
         },
