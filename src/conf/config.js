@@ -27,22 +27,7 @@ const opencga = {
     anonymous: {
         // user: "hgvauser",
         projects: [
-            {
-                id: "platinum",
-                name: "Platinum",
-                alias: "platinum",
-                organism: {
-                    scientificName: "Homo sapiens",
-                    assembly: "GRCh37"
-                },
-                studies : [
-                    {
-                        id: "illumina_platinum",
-                        name: "Illumina Platinum",
-                        alias: "illumina_platinum"
-                    }
-                ]
-            }
+       
         ]
     },
     summary: true,
@@ -53,7 +38,7 @@ const opencga = {
 
 const application = {
     title: "IVA-EXT",
-    version: "v1.0.2",
+    version: "v1.0.3",
     logo: "img/cbra_logo_initial.png",
     menu: [
         {
