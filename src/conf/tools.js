@@ -404,7 +404,8 @@ const tools = {
                     useSearchIndex: "yes",
                     approximateCount: true,
                     approximateCountSamplingSize: 20000,
-                    timeout: 30000
+                    timeout: 30000,
+                    skipCount: false
                 }
             }
         },
