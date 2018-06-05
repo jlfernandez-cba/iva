@@ -21,7 +21,7 @@ const cellbase = {
 };
 
 const opencga = {
-    host: "http://iva-dev.clinbioinfosspa.es:8080/opencga-1.3.4",
+    host: "http://iva-dev.clinbioinfosspa.es:8080/opencga-1.3.6",
     version: "v1",
 
     // This allows IVA to query a OpenCGA instance being an 'anonymous' user, this means that no login is required.
@@ -55,7 +55,7 @@ const opencga = {
 
 const application = {
     title: "IVA",
-    version: "v1.1.4",
+    version: "v1.1.5",
     logo: "img/opencb-logo.png",
     // The order, title and nested submenus are respected
     menu: [
