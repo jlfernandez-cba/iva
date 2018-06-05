@@ -227,6 +227,8 @@ const tools = {
     browser: {
         title: "Variant Browser",
         active: false,
+        showSummary: true,
+        showGenomeBrowser: true,
         filter: {
             // This disables two subsections in the filter menu Prioritization
             menu: Object.assign({}, filterMenu, {skipSubsections: ["sample"]}),
