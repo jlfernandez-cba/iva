@@ -16,12 +16,12 @@
 
 const cellbase = {
     // hosts: ["bioinfodev.hpc.cam.ac.uk/cellbase-4.5.0-rc.1.1"],
-    hosts: ["cellbase.clinbioinfosspa.es/cb"],
+    hosts: ["http://cellbase.clinbioinfosspa.es/cb"],
     version: "v4",
 };
 
 const opencga = {
-    host: "iva-acci.clinbioinfosspa.es:8080/opencga-1.3.6",
+    host: "http://iva-acci.clinbioinfosspa.es:8080/opencga-1.3.6",
     version: "v1",
 
     // This allows IVA to query a OpenCGA instance being an 'anonymous' user, this means that no login is required.
@@ -67,7 +67,7 @@ const application = {
         {
             id: "interpretation",
             title: "Variant Interpretation",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "individual",
@@ -87,22 +87,22 @@ const application = {
         {
             id: "facet",
             title: "Facets",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "beacon",
             title: "Beacon",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "genomeBrowser",
             title: "Genome Browser (Beta)",
-            visibility: "public"
+            visibility: "none"
         },
         {
             id: "analysis",
             title: "Analysis",
-            visibility: "private",
+            visibility: "none",
             submenu: [
                 {
                     title: "Clinical Interpretation",
