@@ -21,52 +21,43 @@ const cellbase = {
 };
 
 const opencga = {
-    host: "iva-acci.clinbioinfosspa.es:8080/opencga-1.3.2",
+    host: "iva-acci.clinbioinfosspa.es:8080/opencga-1.3.6",
     version: "v1",
-    // asUser: "researchcga", // user@project:study
-    projects: [
-        // {
-        //     name: "ProjectA",
-        //     alias: "proj_a",
-        //     studies : [
-        //         {
-        //             name: "Study1",
-        //             alias: "s_1"
-        //         }
-        //     ]
-        // }
-    ],
+
+    // This allows IVA to query a OpenCGA instance being an 'anonymous' user, this means that no login is required.
+    // If 'projects' is empty then all public projects and studies of 'user' will be used.
+    anonymous: {
+        // user: "hgvauser",
+        projects: [
+            {
+                id: "platinum",
+                name: "Platinum",
+                alias: "platinum",
+                organism: {
+                    scientificName: "Homo sapiens",
+                    assembly: "GRCh37"
+                },
+                studies : [
+                    {
+                        id: "illumina_platinum",
+                        name: "Illumina Platinum",
+                        alias: "illumina_platinum"
+                    }
+                ]
+            }
+        ]
+    },
     summary: true,
     cookie: {
         prefix: "iva",
     },
 };
 
-const ebiWS = {
-    root: "https://www.ebi.ac.uk/ols/api",
-    tree: {
-        "hp": ["/ontologies/hp/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FHP_0012823", "/ontologies/hp/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FHP_0040279",
-            "/ontologies/hp/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FHP_0000005", "/ontologies/hp/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FHP_0040006",
-            "/ontologies/hp/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FHP_0000118", "/ontologies/hp/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FUPHENO_0001002"],
-        "go": ["/ontologies/go/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGO_0008150", "/ontologies/go/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGO_0005575",
-            "/ontologies/go/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGO_0003674"]
-    },
-    search: "/search"
-};
-
 const application = {
     title: "IVA-ACCI",
-    version: "v1.1.2",
-    logo: "img/cbra_logo_initial.png",
-    notifyEventMessage: "notifymessage",
-    session: {
-        // 60000 ms = 1 min
-        checkTime: 60000,
-        // 60000 ms = 1 min
-        minRemainingTime: 60000,
-        // 600000 ms = 10 min = 1000(1sec) * 60(60 sec = 1min) * 10(10 min)
-        maxRemainingTime: 600000
-    },
+    version: "v1.1.3",
+    logo: "img/opencb-logo.png",
+    // The order, title and nested submenus are respected
     menu: [
         {
             id: "browser",
@@ -79,6 +70,16 @@ const application = {
             visibility: "public",
         },
         {
+            id: "individual",
+            title: "Individual",
+            visibility: "none",
+        },
+        {
+            id: "family",
+            title: "Family",
+            visibility: "none",
+        },
+        {
             id: "clinical",
             title: "Start",
             visibility: "public",
@@ -89,22 +90,22 @@ const application = {
             visibility: "public",
         },
         {
-            id: "panel",
-            title: "Panels",
+            id: "beacon",
+            title: "Beacon",
             visibility: "public",
+        },
+        {
+            id: "genomeBrowser",
+            title: "Genome Browser (Beta)",
+            visibility: "public"
         },
         {
             id: "analysis",
             title: "Analysis",
-            visibility: "none",
+            visibility: "private",
             submenu: [
-
                 {
-                    separator: true,
-                    visibility: "public",
-                },
-                {
-                    title: "Interpretation",
+                    title: "Clinical Interpretation",
                     category: true,
                     visibility: "public",
                 },
@@ -118,21 +119,8 @@ const application = {
                     title: "Cancer",
                     visibility: "public",
                 },
-            ],
-        },
-        {
-            id: "beacon",
-            title: "Beacon",
-            visibility: "none",
-        },
-        {
-            id: "tools",
-            title: "Tools",
-            visibility: "none",
-            submenu: [
                 {
-                    id: "ibs",
-                    title: "IBS",
+                    separator: true,
                     visibility: "public",
                 },
                 {
@@ -140,18 +128,40 @@ const application = {
                     title: "Burden Test",
                     visibility: "public",
                 },
+            ],
+        },
+        {
+            id: "tools",
+            title: "Tools",
+            visibility: "none",
+            submenu: [
+                {
+                    title: "Catalog",
+                    category: true,
+                    visibility: "public",
+                },
+                {
+                    id: "samples",
+                    title: "Samples",
+                    visibility: "public",
+                },
+                {
+                    id: "panel",
+                    title: "Panels",
+                    visibility: "public",
+                },
                 {
                     separator: true,
                     visibility: "public",
                 },
                 {
-                    title: "Export",
+                    title: "Other",
                     category: true,
                     visibility: "public",
                 },
                 {
-                    id: "saturation",
-                    title: "Saturation",
+                    id: "ibs",
+                    title: "IBS",
                     visibility: "public",
                 },
                 {
@@ -161,15 +171,10 @@ const application = {
                 }
             ]
         },
-        {
-            id: "genomeBrowser",
-            title: "Genome Browser",
-            visibility: "none",
-        },
     ],
     search: {
         placeholder: "Search",
-        visibility: "none",
+        visible: true,
     },
     settings: {
         visibility: "none",
@@ -178,25 +183,45 @@ const application = {
         {name: "Documentation", url: "http://docs.opencb.org/display/iva/IVA+Home", icon: "fa fa-book"},
         {name: "Tutorial", url: "http://docs.opencb.org/display/iva/Tutorials", icon: ""},
         {name: "Source code", url: "https://github.com/opencb/iva", icon: "fa fa-github"},
+        {name: "Releases", url: "https://github.com/opencb/iva/releases", icon: ""},
         {name: "Contact", url: "http://docs.opencb.org/display/iva/About", icon: "fa fa-envelope"},
         {name: "Issue Report", url: "http://issues.clinbioinfosspa.es/", icon: "fa fa-bug"},
         {name: "FAQ", url: "", icon: ""},
-        {name: "Version 0.9.0", url: "https://github.com/babelomics/iva", icon: ""},
     ],
     login: {
-        visibility: "public",
+        visible: true,
     },
     breadcrumb: {
         title: "Projects",
-        visibility: "private",
+        visible: true,
     },
+    notifyEventMessage: "notifymessage",
+    session: {
+        // 60000 ms = 1 min
+        checkTime: 60000,
+        // 60000 ms = 1 min
+        minRemainingTime: 60000,
+        // 600000 ms = 10 min = 1000(1sec) * 60(60 sec = 1min) * 10(10 min)
+        maxRemainingTime: 600000
+    }
 };
 
+const sampleBrowser = {
+    title: "Sample Browser",
+    showTitle: true,
+    filter: {
+
+    },
+    grid: {
+        showSelect: true,
+    }
+};
 
 const beacon = {
     hosts: [
-        "brca-exchange", "cell_lines", "cosmic", "wtsi", "wgs", "ncbi", "ebi", "ega", "broad", "gigascience", "ucsc", "lovd", "hgmd", "icgc", "sahgp",
-    ],
+        "brca-exchange", "cell_lines", "cosmic", "wtsi", "wgs", "ncbi", "ebi", "ega", "broad", "gigascience",
+        "ucsc", "lovd", "hgmd", "icgc", "sahgp"
+    ]
 };
 
 const populationFrequencies = {
@@ -321,23 +346,18 @@ const consequenceTypes = {
 
     // Loss-of-function SO terms
     lof: ["transcript_ablation", "splice_acceptor_variant", "splice_donor_variant", "stop_gained", "frameshift_variant",
-        "stop_lost,start_lost", "transcript_amplification", "inframe_insertion", "inframe_deletion"],
+        "stop_lost", "start_lost", "transcript_amplification", "inframe_insertion", "inframe_deletion"],
 
     // 'Title' is optional. if there is not title provided then 'name' will be used.
-    //  There are two more optional properties - 'checked' and 'color'. They can be set to display them default in web application.
+    //  There are two more optional properties - 'checked' and 'impact'. They can be set to display them default in web application.
     //  Similarly 'description' is optional as well.
     categories: [
         {
-            id: "",
-            name: "",
             title: "Intergenic",
-            description: "",
-            isCategory: true,
             terms: [
                 {
                     id: "SO:0001631",
                     name: "upstream_gene_variant",
-                    title: "upstream gene variant",
                     description: "A sequence variant located 5' of a gene",
                     impact: "modifier",
                 },
@@ -346,7 +366,6 @@ const consequenceTypes = {
                     name: "2KB_upstream_variant",
                     description: "A sequence variant located within 2KB 5' of a gene",
                     impact: "modifier",
-                    // checked: true
                 },
                 {
                     id: "SO:0001632",
@@ -359,7 +378,6 @@ const consequenceTypes = {
                     name: "2KB_downstream_variant",
                     description: "A sequence variant located within 2KB 3' of a gene",
                     impact: "modifier",
-                    // checked: true
                 },
                 {
                     id: "SO:0001628",
@@ -370,7 +388,6 @@ const consequenceTypes = {
             ],
         },
         {
-            isCategory: true,
             title: "Regulatory",
             terms: [
                 {
@@ -418,7 +435,6 @@ const consequenceTypes = {
             ],
         },
         {
-            isCategory: true,
             title: "Coding",
             terms: [
                 {
@@ -515,7 +531,6 @@ const consequenceTypes = {
             ],
         },
         {
-            isCategory: true,
             title: "Non-coding",
             terms: [
                 {
@@ -545,7 +560,6 @@ const consequenceTypes = {
             ],
         },
         {
-            isCategory: true,
             title: "Splice",
             terms: [
                 {
@@ -569,14 +583,12 @@ const consequenceTypes = {
             ],
         },
         {
-            isCategory: false,
             id: "SO:0001893",
             name: "transcript_ablation",
             description: "A feature ablation whereby the deleted region includes a transcript feature",
             impact: "high",
         },
         {
-            isCategory: false,
             id: "SO:0001889",
             name: "transcript_amplification",
             description: "A feature amplification of a region containing a transcript",
@@ -622,34 +634,3 @@ const DEFAULT_SPECIES = {
         },
     ],
 };
-
-const biotypes = ["3prime_overlapping_ncrna",
-    "IG_C_gene",
-    "IG_C_pseudogene",
-    "IG_D_gene",
-    "IG_J_gene",
-    "IG_J_pseudogene",
-    "IG_V_gene",
-    "IG_V_pseudogene",
-    "Mt_rRNA",
-    "Mt_tRNA",
-    "TR_C_gene",
-    "TR_D_gene",
-    "TR_J_gene",
-    "TR_J_pseudogene",
-    "TR_V_gene",
-    "TR_V_pseudogene",
-    "antisense",
-    "lincRNA",
-    "miRNA",
-    "misc_RNA",
-    "polymorphic_pseudogene",
-    "processed_transcript",
-    "protein_coding",
-    "pseudogene",
-    "rRNA",
-    "sense_intronic",
-    "sense_overlapping",
-    "snRNA",
-    "snoRNA",
-];
