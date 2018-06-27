@@ -325,6 +325,9 @@ const tools = {
     individual: {
         active: false
     },
+    family: {
+        active: false
+    },
     gene: {
         protein: {
             color: {
