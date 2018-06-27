@@ -361,7 +361,6 @@ const tools = {
             visible: true,
             algorithms: [
                 {id: "interactive", title: "Interactive (based on TEAM paper)"},
-                {id: "automatic", title: "Automatic", checked: true},
             ],
 
             // Interpretation standard config
