@@ -102,7 +102,7 @@ const application = {
         {
             id: "clinical",
             title: "Start",
-            visibility: "public",
+            visibility: "private",
         },
         {
             id: "facet",
