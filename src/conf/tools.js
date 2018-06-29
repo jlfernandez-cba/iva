@@ -360,7 +360,7 @@ const tools = {
         interpretation: {
             visible: true,
             algorithms: [
-                {id: "interactive", title: "Interactive (based on TEAM paper)"},
+                {id: "interactive", title: "Interactive (based on TEAM paper)", checked: true},
             ],
 
             // Interpretation standard config
