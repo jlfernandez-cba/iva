@@ -373,7 +373,8 @@ const tools = {
             grid: {
                 showSelect: true,
                 nucleotideGenotype: true,
-                includeMissing: true,
+                includeMissing: false, // Cuando solr no está activo
+                // includeMissing: true, cuando solr está activo
                 queryParams: {
                     useSearchIndex: "no",
                     approximateCount: false,
