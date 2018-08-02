@@ -22,7 +22,7 @@ const cellbase = {
 
 const opencga = {
     // host: "http://bioinfodev.hpc.cam.ac.uk/hgva-1.3.6",
-    host: "http://iva-ext.clinbioinfosspa.es:8080/opencga-1.3.2",
+    host: "http://iva-demo.clinbioinfosspa.es:8080/opencga-1.3.7",
     version: "v1",
 
     // This forces the following projects to be used instead of the user's project
