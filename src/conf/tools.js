@@ -379,8 +379,7 @@ const tools = {
         interpretation: {
             visible: true,
             algorithms: [
-                {id: "interactive", title: "Interactive (based on TEAM paper)"},
-                {id: "automatic", title: "Automatic", checked: true},
+                {id: "interactive", title: "Interactive (based on TEAM paper)", checked: true}
             ],
 
             // Interpretation standard config
@@ -393,10 +392,10 @@ const tools = {
             grid: {
                 showSelect: true,
                 nucleotideGenotype: true,
-                includeMissing: true,
+                includeMissing: false,
                 queryParams: {
-                    useSearchIndex: "yes",
-                    approximateCount: true,
+                    useSearchIndex: "no",
+                    approximateCount: false,
                     skipCount: false,
                     approximateCountSamplingSize: 5000,
                     timeout: 30000,
@@ -409,8 +408,8 @@ const tools = {
 
 
         queryParams: {
-            useSearchIndex: "yes",
-            approximateCount: true,
+            useSearchIndex: "no",
+            approximateCount: false,
             approximateCountSamplingSize: 5000,
             timeout: 30000
         },

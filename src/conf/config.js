@@ -15,14 +15,14 @@
  */
 
 const cellbase = {
-    hosts: ["http://bioinfo.hpc.cam.ac.uk/cellbase/"],
-    // hosts: ["http://cellbase.clinbioinfosspa.es/cb"],
+    // hosts: ["http://bioinfo.hpc.cam.ac.uk/cellbase/"],
+    hosts: ["http://cellbase.clinbioinfosspa.es/cb"],
     version: "v4",
 };
 
 const opencga = {
-    host: "http://bioinfodev.hpc.cam.ac.uk/hgva-1.3.6",
-    // host: "http://10.248.117.63:8080/opencga-1.3.5",
+    // host: "http://bioinfodev.hpc.cam.ac.uk/hgva-1.3.6",
+    host: "http://iva-ext.clinbioinfosspa.es:8080/opencga-1.3.2",
     version: "v1",
 
     // This forces the following projects to be used instead of the user's project
@@ -50,22 +50,7 @@ const opencga = {
     anonymous: {
         // user: "hgvauser",
         projects: [
-            {
-                id: "platinum",
-                name: "Platinum",
-                alias: "platinum",
-                organism: {
-                    scientificName: "Homo sapiens",
-                    assembly: "GRCh37"
-                },
-                studies : [
-                    {
-                        id: "illumina_platinum",
-                        name: "Illumina Platinum",
-                        alias: "illumina_platinum"
-                    }
-                ]
-            }
+
         ]
     },
     summary: true,
@@ -76,19 +61,19 @@ const opencga = {
 
 const application = {
     title: "IVA",
-    version: "v1.0.0-beta",
+    version: "v1.0.0",
     logo: "img/opencb-logo.png",
     // The order, title and nested submenus are respected
     menu: [
         {
             id: "browser",
             title: "Variant Browser",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "interpretation",
             title: "Variant Interpretation",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "individual",
@@ -108,22 +93,22 @@ const application = {
         {
             id: "facet",
             title: "Facets",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "beacon",
             title: "Beacon",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "genomeBrowser",
             title: "Genome Browser (Beta)",
-            visibility: "public"
+            visibility: "none"
         },
         {
             id: "analysis",
             title: "Analysis",
-            visibility: "private",
+            visibility: "none",
             submenu: [
                 {
                     title: "Clinical Interpretation",
@@ -154,7 +139,7 @@ const application = {
         {
             id: "tools",
             title: "Tools",
-            visibility: "public",
+            visibility: "none",
             submenu: [
                 {
                     title: "Catalog",
