@@ -17,7 +17,7 @@
 const cellbase = {
     // hosts: ["bioinfodev.hpc.cam.ac.uk/cellbase-4.5.0-rc.1.1"],
     hosts: ["http://192.168.150.32:8080/cellbase-4.6.0-SNAPSHOT"],
-    version: "v4",
+    version: "v4-dev",
 };
 
 const opencga = {
