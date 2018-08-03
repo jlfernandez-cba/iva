@@ -228,7 +228,7 @@ const tools = {
         title: "Variant Browser",
         active: false,
         showSummary: true,
-        showGenomeBrowser: true,
+        showGenomeBrowser: false,
         filter: {
             // This disables two subsections in the filter menu Prioritization
             menu: Object.assign({}, filterMenu, {skipSubsections: ["sample"]}),
@@ -253,12 +253,14 @@ const tools = {
         grid: {
             showSelect: false,
             nucleotideGenotype: false,
-            includeMissing: true,
+            includeMissing: false,
             queryParams: {
-                useSearchIndex: "auto",
-                approximateCount: true,
+                useSearchIndex: "no",
+                approximateCount: false,
                 approximateCountSamplingSize: 5000,
-                timeout: 30000
+                timeout: 30000,
+                skipCount: false
+
             }
         }
     },
@@ -291,12 +293,13 @@ const tools = {
             showSelect: true,
             nucleotideGenotype: true,
             interpretation: true,
-            includeMissing: true,
+            includeMissing: false,
             queryParams: {
-                useSearchIndex: "yes",
-                approximateCount: true,
+                useSearchIndex: "no",
+                approximateCount: false,
                 approximateCountSamplingSize: 1000,
-                timeout: 30000
+                timeout: 30000,
+                skipCount: false
             }
         }
     },
@@ -353,6 +356,12 @@ const tools = {
     panel: {
         active: false
     },
+    individual: {
+        active: false
+    },
+    family: {
+        active: false
+    },
     gene: {
         protein: {
             color: {
@@ -399,10 +408,10 @@ const tools = {
             grid: {
                 showSelect: true,
                 nucleotideGenotype: true,
-                includeMissing: true,
+                includeMissing: false,
                 queryParams: {
-                    useSearchIndex: "yes",
-                    approximateCount: true,
+                    useSearchIndex: "no",
+                    approximateCount: false,
                     approximateCountSamplingSize: 20000,
                     timeout: 30000,
                     skipCount: false
@@ -415,8 +424,8 @@ const tools = {
 
 
         queryParams: {
-            useSearchIndex: "yes",
-            approximateCount: true,
+            useSearchIndex: "no",
+            approximateCount: false,
             approximateCountSamplingSize: 5000,
             timeout: 30000
         },

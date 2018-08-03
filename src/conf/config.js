@@ -16,13 +16,33 @@
 
 const cellbase = {
     // hosts: ["bioinfodev.hpc.cam.ac.uk/cellbase-4.5.0-rc.1.1"],
-    hosts: ["http://cellbase.clinbioinfosspa.es/cb"],
+    hosts: ["http://192.168.150.32:8080/cellbase-4.6.0-SNAPSHOT"],
     version: "v4",
 };
 
 const opencga = {
-    host: "http://iva-dev.clinbioinfosspa.es:8080/opencga-1.3.6",
+    host: "http://iva-dev.clinbioinfosspa.es:8080/opencga-1.4.0-rc-dev",
     version: "v1",
+
+    // This forces the following projects to be used instead of the user's project
+    // projects: [
+    //     {
+    //         id: "platinum",
+    //         name: "Platinum",
+    //         alias: "platinum",
+    //         organism: {
+    //             scientificName: "Homo sapiens",
+    //             assembly: "GRCh37"
+    //         },
+    //         studies : [
+    //             {
+    //                 id: "illumina_platinum",
+    //                 name: "Illumina Platinum",
+    //                 alias: "illumina_platinum"
+    //             }
+    //         ]
+    //     }
+    // ],
 
     // This allows IVA to query a OpenCGA instance being an 'anonymous' user, this means that no login is required.
     // If 'projects' is empty then all public projects and studies of 'user' will be used.
@@ -55,7 +75,7 @@ const opencga = {
 
 const application = {
     title: "IVA",
-    version: "v1.1.5",
+    version: "v1.1.6",
     logo: "img/opencb-logo.png",
     // The order, title and nested submenus are respected
     menu: [
@@ -68,6 +88,16 @@ const application = {
             id: "interpretation",
             title: "Variant Interpretation",
             visibility: "public",
+        },
+        {
+            id: "individual",
+            title: "Individual",
+            visibility: "none",
+        },
+        {
+            id: "family",
+            title: "Family",
+            visibility: "none",
         },
         {
             id: "clinical",
@@ -278,20 +308,6 @@ const populationFrequencies = {
                 },
                 {
                     id: "SAS", title: "South Asian [SAS]",
-                },
-            ],
-        },
-        {
-            id: "ESP6500",
-            title: "ESP6500",
-            tooltip: "Only considers variants whose observed allelic frequency in the Exome Variant Server (ESP6500) database is below " +
-            "(or above) the defined value. ESP6500 covers only exomic positions. The frequencies were obtained from more than 6000 exomes.",
-            populations: [
-                {
-                    id: "EA", title: "European American [EA]"
-                },
-                {
-                    id: "AA", title: "African American [AA]",
                 },
             ],
         },
