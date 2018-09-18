@@ -27,7 +27,7 @@ const opencga = {
     anonymous: {
         // user: "hgvauser",
         projects: [
-       
+
         ]
     },
     summary: true,
