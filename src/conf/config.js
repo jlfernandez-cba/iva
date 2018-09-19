@@ -38,7 +38,7 @@ const opencga = {
 
 const application = {
     title: "IVA-COURSES",
-    version: "v1.0.0",
+    version: "v1.0.1",
     logo: "img/cbra_logo_initial.png",
     menu: [
         {
