@@ -22,7 +22,8 @@ const cellbase = {
 
 const opencga = {
     // host: "http://bioinfodev.hpc.cam.ac.uk/hgva-1.3.6",
-    host: "http://bioinfo.hpc.cam.ac.uk/hgva",
+    // host: "http://bioinfo.hpc.cam.ac.uk/hgva",
+    host: 'http://iva-courses.clinbioinfosspa.es:8080/opencga-1.3.6',
     version: "v1",
     serverVersion: "1.4",
 
