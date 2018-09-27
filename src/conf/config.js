@@ -15,59 +15,19 @@
  */
 
 const cellbase = {
-    hosts: ["http://bioinfo.hpc.cam.ac.uk/cellbase"],
-    // hosts: ["http://cellbase.clinbioinfosspa.es/cb"],
-    version: "v4",
+    hosts: ["http://cellbase.clinbioinfosspa.es/cb"],
+    version: "v4"
 };
 
 const opencga = {
-    // host: "http://bioinfodev.hpc.cam.ac.uk/hgva-1.3.6",
-    // host: "http://bioinfo.hpc.cam.ac.uk/hgva",
-    host: 'http://iva-courses.clinbioinfosspa.es:8080/opencga-1.3.6',
+    host: "http://iva-courses.clinbioinfosspa.es:8080/opencga-1.3.6",
     version: "v1",
-    serverVersion: "1.4",
-
-    // This forces the following projects to be used instead of the user's project
-    // projects: [
-    //     {
-    //         id: "platinum",
-    //         name: "Platinum",
-    //         alias: "platinum",
-    //         organism: {
-    //             scientificName: "Homo sapiens",
-    //             assembly: "GRCh37"
-    //         },
-    //         studies : [
-    //             {
-    //                 id: "illumina_platinum",
-    //                 name: "Illumina Platinum",
-    //                 alias: "illumina_platinum"
-    //             }
-    //         ]
-    //     }
-    // ],
-
     // This allows IVA to query a OpenCGA instance being an 'anonymous' user, this means that no login is required.
     // If 'projects' is empty then all public projects and studies of 'user' will be used.
     anonymous: {
         // user: "hgvauser",
         projects: [
-            {
-                id: "platinum",
-                name: "Platinum",
-                alias: "platinum",
-                organism: {
-                    scientificName: "Homo sapiens",
-                    assembly: "GRCh37"
-                },
-                studies : [
-                    {
-                        id: "illumina_platinum",
-                        name: "Illumina Platinum",
-                        alias: "illumina_platinum"
-                    }
-                ]
-            }
+
         ]
     },
     summary: true,
@@ -77,20 +37,19 @@ const opencga = {
 };
 
 const application = {
-    title: "IVA",
-    version: "v1.0.0-beta",
-    logo: "img/opencb-logo.png",
-    // The order, title and nested submenus are respected
+    title: "IVA-COURSES",
+    version: "v1.0.1",
+    logo: "img/cbra_logo_initial.png",
     menu: [
         {
             id: "browser",
             title: "Variant Browser",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "interpretation",
             title: "Variant Interpretation",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "individual",
@@ -104,28 +63,23 @@ const application = {
         },
         {
             id: "clinical",
-            title: "Clinical",
+            title: "Start",
             visibility: "public",
         },
         {
             id: "facet",
             title: "Facets",
-            visibility: "public",
-        },
-        {
-            id: "beacon",
-            title: "Beacon",
-            visibility: "public",
+            visibility: "none",
         },
         {
             id: "genomeBrowser",
             title: "Genome Browser (Beta)",
-            visibility: "public"
+            visibility: "none"
         },
         {
             id: "analysis",
             title: "Analysis",
-            visibility: "private",
+            visibility: "none",
             submenu: [
                 {
                     title: "Clinical Interpretation",
@@ -154,9 +108,14 @@ const application = {
             ],
         },
         {
+            id: "beacon",
+            title: "Beacon",
+            visibility: "none",
+        },
+        {
             id: "tools",
             title: "Tools",
-            visibility: "public",
+            visibility: "none",
             submenu: [
                 {
                     title: "Catalog",
@@ -199,13 +158,19 @@ const application = {
                 }
             ]
         },
+        {
+            id: "genomeBrowser",
+            title: "Genome Browser",
+            visibility: "none",
+        },
+
     ],
     search: {
         placeholder: "Search",
         visible: true,
     },
     settings: {
-        visibility: "public",
+        visibility: "none",
     },
     about: [
         {name: "Documentation", url: "http://docs.opencb.org/display/iva/IVA+Home", icon: "fa fa-book"},
@@ -213,6 +178,7 @@ const application = {
         {name: "Source code", url: "https://github.com/opencb/iva", icon: "fa fa-github"},
         {name: "Releases", url: "https://github.com/opencb/iva/releases", icon: ""},
         {name: "Contact", url: "http://docs.opencb.org/display/iva/About", icon: "fa fa-envelope"},
+        {name: "Issue Report", url: "http://issues.clinbioinfosspa.es/", icon: "fa fa-bug"},
         {name: "FAQ", url: "", icon: ""},
     ],
     login: {
@@ -284,8 +250,14 @@ const populationFrequencies = {
                     id: "EAS", title: "East Asian [EAS]",
                 },
                 {
-                    id: "SAS", title: "South Asian [SAS]",
+                    id: "IBS",
+                    title: "Iberian [IBS]",
+                },
+                {
+                    id: "SAS",
+                    title: "South Asian [SAS]",
                 }
+
             ],
         },
         {
@@ -314,20 +286,31 @@ const populationFrequencies = {
                 },
             ],
         },
-        // {
-        //     id: "ESP6500",
-        //     title: "ESP6500",
-        //     tooltip: "Only considers variants whose observed allelic frequency in the Exome Variant Server (ESP6500) database is below " +
-        //     "(or above) the defined value. ESP6500 covers only exomic positions. The frequencies were obtained from more than 6000 exomes.",
-        //     populations: [
-        //         {
-        //             id: "EA", title: "European American [EA]"
-        //         },
-        //         {
-        //             id: "AA", title: "African American [AA]",
-        //         },
-        //     ],
-        // },
+        {
+            id: "ESP6500",
+            title: "ESP6500",
+            tooltip: "Only considers variants whose observed allelic frequency in the Exome Variant Server (ESP6500) database is below " +
+            "(or above) the defined value. ESP6500 covers only exomic positions. The frequencies were obtained from more than 6000 exomes.",
+            populations: [
+                {
+                    id: "EA", title: "European American [EA]"
+                },
+                {
+                    id: "AA", title: "African American [AA]",
+                },
+            ],
+        },
+        {
+            id: "MGP",
+            title: "MGP",
+            tooltip: "Only considers variants whose observed allelic frequency in the Spanish Medical Genome Project (MGP) database is below (or above) the defined value. MGP covers only exomic positions. The frequencies were obtained using up to 267 exomes.",
+            populations: [
+                {
+                    id: "ALL",
+                    title: "MGP [ALL]",
+                },
+            ],
+        },
     ],
 };
 

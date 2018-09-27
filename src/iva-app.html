@@ -294,14 +294,18 @@
                     </div>
                 </template>
 
-                <template is="dom-if" if="{{config.enabledComponents.clinical}}">
+                <template is="dom-if" if="{{config.enabledComponents.clinical}}" restamp="true">
                     <div class="content" id="clinical">
-                        <opencga-variant-clinical opencga-session="{{opencgaSession}}" config="[[config.tools.clinical]]"
-                                          population-frequencies="{{config.populationFrequencies}}"
-                                          protein-substitution-scores="{{config.proteinSubstitutionScores}}"
-                                          consequence-types="{{config.consequenceTypes}}"
-                                          opencga-client="{{opencgaClient}}" cellbase-client="{{cellbaseClient}}"
-                                          on-notifymessage="onNotifyMessage" event-notify-name="{{config.notifyEventMessage}}" >
+                        <opencga-variant-clinical
+                                opencga-session="{{opencgaSession}}"
+                                opencga-client="{{opencgaClient}}"
+                                cellbase-client="{{cellbaseClient}}"
+                                config="[[config.tools.clinical]]"
+                                population-frequencies="{{config.populationFrequencies}}"
+                                protein-substitution-scores="{{config.proteinSubstitutionScores}}"
+                                consequence-types="{{config.consequenceTypes}}"
+                                on-notifymessage="onNotifyMessage"
+                                event-notify-name="{{config.notifyEventMessage}}" >
                         </opencga-variant-clinical>
                     </div>
                 </template>

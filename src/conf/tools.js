@@ -25,7 +25,7 @@ const filterMenu = {
     skipSubsections: [],    // controls which subsections are disabled and should not be displayed
     sections: [             // sections and subsections, structure and order is respected
         {
-            title: "Study and Cohorts",
+            title: "Study",
             collapsed: false,
             subsections: [
                 {
@@ -104,7 +104,14 @@ const filterMenu = {
                     id: "type",
                     title: "Variant Type",
                     tooltip: "Only considers variants of the selected type"
+                },
+                {
+                    id: "consequenceType",
+                    title: "Select SO terms",
+                    tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
                 }
+
+
             ]
         },
         {
@@ -166,44 +173,17 @@ const filterMenu = {
             ]
         },
         {
-            title: "Consequence Type",
-            collapsed: true,
-            subsections: [
-                {
-                    id: "consequenceType",
-                    title: "Select SO terms",
-                    tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
-                }
-            ]
-        },
-        {
-            title: "Gene Ontology",
+            title: "Clinical",
             collapsed: true,
             subsections: [
                 {
                     id: "go",
                     title: "GO Accessions",
                     tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
-                }
-            ]
-        },
-        {
-            title: "Phenotype-Disease",
-            collapsed: true,
-            subsections: [
+                },
                 {
                     id: "hpo",
                     title: "HPO Accessions",
-                    tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
-                },
-                {
-                    id: "clinvar",
-                    title: "ClinVar Accessions",
-                    tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
-                },
-                {
-                    id: "fullTextSearch",
-                    title: "Full-text search on HPO, ClinVar, protein domains or keywords. Some OMIM and Orphanet IDs are also supported",
                     tooltip: "Filter out variants falling outside the genomic features (gene, transcript, SNP, etc.) defined"
                 }
             ]
@@ -241,9 +221,9 @@ const tools = {
         grid: {
             showSelectCheckbox: false,
             nucleotideGenotype: false,
-            includeMissing: true,
+            includeMissing: false,
             queryParams: {
-                useSearchIndex: "auto",
+                useSearchIndex: "no",
                 approximateCount: true,
                 approximateCountSamplingSize: 5000,
                 skipCount: false,
@@ -309,12 +289,13 @@ const tools = {
             showSelectCheckbox: true,
             nucleotideGenotype: true,
             interpretation: true,
-            includeMissing: true,
+            includeMissing: false,
             queryParams: {
-                useSearchIndex: "yes",
+                useSearchIndex: "no",
                 approximateCount: true,
                 approximateCountSamplingSize: 1000,
-                timeout: 30000
+                timeout: 30000,
+                skipCount: false
             }
         }
     },
@@ -409,8 +390,7 @@ const tools = {
         interpretation: {
             visible: true,
             algorithms: [
-                {id: "interactive", title: "Interactive (based on TEAM paper)"},
-                {id: "automatic", title: "Automatic", checked: true},
+                {id: "interactive", title: "Interactive (based on TEAM paper)", checked: true}
             ],
 
             // Interpretation standard config
@@ -423,13 +403,13 @@ const tools = {
             grid: {
                 showSelect: true,
                 nucleotideGenotype: true,
-                includeMissing: true,
+                includeMissing: false,
                 queryParams: {
-                    useSearchIndex: "yes",
-                    approximateCount: true,
-                    skipCount: false,
+                    useSearchIndex: "no",
+                    approximateCount: false,
                     approximateCountSamplingSize: 5000,
                     timeout: 30000,
+                    skipCount: false
                 }
             }
         },
@@ -439,8 +419,8 @@ const tools = {
 
 
         queryParams: {
-            useSearchIndex: "yes",
-            approximateCount: true,
+            useSearchIndex: "no",
+            approximateCount: false,
             approximateCountSamplingSize: 5000,
             timeout: 30000
         },
