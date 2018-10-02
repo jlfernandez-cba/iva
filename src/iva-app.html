@@ -438,6 +438,11 @@
 
         class IvaApp extends Polymer.Element {
 
+            onSamplesChanged(newValue, oldValue) {
+                console.log("iva-app.samples.onChange()");
+                console.dir(newValue);
+            }
+
             constructor() {
                 super();
 
@@ -452,7 +457,8 @@
                 return {
                     samples: {
                         type: Array,
-                        value: []
+                        value: [],
+                        observer: "onSamplesChanged",
                     },
                     studySummaries: {
                         type: Array
@@ -570,6 +576,7 @@
             }
 
             opencgaSessionObserver() {
+                this.onSamplesChanged(this.opencgaSession.samples, []);
                 this.renderHashFragments();
                 this.renderBreadcrumb();
             }
