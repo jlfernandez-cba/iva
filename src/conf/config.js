@@ -20,7 +20,8 @@ const cellbase = {
 };
 
 const opencga = {
-    host: "http://iva-courses.clinbioinfosspa.es:8080/opencga-1.3.6",
+    // host: "http://iva-courses.clinbioinfosspa.es:8080/opencga-1.3.6",
+    host: "http://localhost:8080/opencga-test",
     version: "v1",
     // This allows IVA to query a OpenCGA instance being an 'anonymous' user, this means that no login is required.
     // If 'projects' is empty then all public projects and studies of 'user' will be used.
